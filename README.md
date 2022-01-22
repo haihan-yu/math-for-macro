@@ -14,8 +14,6 @@ These lectures aim to familiarize students with mathematical methods to study dy
 
 All the material for the course is contained in the `pdf` and `tex` folders.
 
-### `pdf` folder
-
 The `pdf` folder contains all the material for the course in PDF format.
 
 + `dynamicprogramming.pdf`: lecture notes covering dynamic programming
@@ -25,8 +23,6 @@ The `pdf` folder contains all the material for the course in PDF format.
 + `exercises_solutions.pdf`: solutions to the exercises
 + `exam.pdf`: one-hour exam covering all three topics
 + `exam_solutions.pdf`: solutions to the exam
-
-### `tex` folder
 
 The `tex` folder contains the TEX files used to create the PDF files in the `pdf` folder.
 
