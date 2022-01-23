@@ -4,7 +4,7 @@ This repository contains material for a one-week graduate course on mathematical
 
 ## Overview
 
-These lectures aim to familiarize students with mathematical methods to study dynamical systems, in discrete time and in continuous time. Dynamical systems are systems that involve more than one time-period; they are prevalent in many areas of macroeconomics. The course covers three methods:
+These lectures cover basic mathematical methods to study dynamical systems, in discrete time and in continuous time. Dynamical systems are systems that involve more than one time-period; they are prevalent in many areas of macroeconomics. The course covers three methods:
 
 1. Dynamic programming: to solve discrete-time dynamic optimization problems
 2. Optimal control: to solve continuous-time dynamic optimization problems
@@ -28,7 +28,7 @@ The `tex` folder contains the TEX files used to create the PDF files in the `pdf
 
 ## Useful resources
 
-No textbook is required for this short course, but the following are useful resources to study the methods introduced in this course:
+No textbook is required for this short course, but the following resources provide useful additional material:
 
 1. Chapters 6 & 7 of [Introduction to Modern Economic Growth](https://press.princeton.edu/books/hardcover/9780691132921/introduction-to-modern-economic-growth) by Daron Acemoglu
 2. [Differential Equations, Dynamical Systems, and an Introduction to Chaos](https://www.sciencedirect.com/book/9780123820105/differential-equations-dynamical-systems-and-an-introduction-to-chaos) by Morris Hirsch, Stephen Smale, and Robert Devaney
