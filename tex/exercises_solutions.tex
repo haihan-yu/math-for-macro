@@ -1,0 +1,500 @@
+\documentclass[letterpaper,12pt,leqno]{article}
+\usepackage{paper,math,notes}
+
+\begin{document}
+
+\title{Mathematical Methods for Macroeconomics: Exercise Solutions}
+\author{Pascal Michaillat}
+\date{}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\section*{Solution to Exercise 1.}
+
+\begin{enumerate}
+\item See lecture notes.
+\item At the beginning of period $t$, one can choose $c_{t}$ but not $k_{t}$. So the control variable is $c_{t}$ and the state variable is $k_{t}$. But given $k_{t}$, $c_{t}$ and $k_{t+1}$ are tied via the resource constraint. We saw in lecture that choosing $k_{t+1}$ simplifies the application of the Benveniste-Scheinkman equation. So we use $k_{t+1}$ instead of $c_{t}$ as a control variable.  Below, $k$ denotes capital in the current period (state variable) and $k'$ denotes capital in the next period (control variable).
+\item The Bellman equation is 
+\begin{align*}
+V\bp{k} =\max[k']{\ln{A\cdot k^{\a}-k'} +\b\cdot V(k')}.
+\end{align*}
+\item The first-order condition with respect to $k'$ in the Bellman equation is
+\begin{align}
+\frac{1}{c} =\b \cdot \od{V}{k}\bp{k'}\label{eq:EQ1}
+\end{align}
+and the Benveniste-Scheinkman equation is
+\begin{align*}
+\od{V}{k}\bp{k} =\a\cdot  A\cdot k^{\a -1}\cdot \frac{1}{c} 
+\end{align*}
+and by combining both equations we obtain the Euler equation
+\begin{align*}
+c' =\a \cdot \b \cdot A\cdot \bp{k'}^{\a -1}\cdot c .
+\end{align*}
+
+\item Start with $V_{0}\bp{k} =0$. Plug $V_{0}(k)$ into the Bellman equation to calculate the value function
+\begin{align*}
+V_{1}\bp{k}& =\max[k']{\ln{A\cdot k^{\a}-k'} +\b\cdot  V_{0}(k')}\\
+V_{1}\bp{k} &=\max[k']{\ln{A\cdot k^{\a}-k'}}.
+\end{align*}
+The policy function is $k'=0$, which implies that $c=A\cdot k^{\a}$. Therefore, the value function after the first iteration is
+\begin{align*}
+V_{1}\bp{k} =\ln{A\cdot k^{\a}}
+\end{align*}
+Now substitute the value function $V_{1}\bp{k} $ into the Bellman equation and calculate the value function
+\begin{align*}
+V_{2}\bp{k} &=\max[k']{\ln{A\cdot k^{\a}-k'} +\b \cdot V_{1}\bp{k'}}\\
+V_{2}\bp{k} &=\max[k']{\ln{A\cdot k^{\a}-k'} +\b \cdot \ln{A\cdot (k')^{\a}}}.
+\end{align*}
+The first-order condition  with respect to $k'$ is 
+\begin{align*}
+\frac{-1}{A \cdot k^{\a}-k'}+\frac{\a \cdot \b}{k'}=0.
+\end{align*}
+Thus, the policy function is
+\begin{align*}
+k'=\frac{\a\cdot \b}{1+\a  \cdot \b} \cdot A \cdot k^{\a}
+\end{align*}
+which also implies that 
+\begin{align*}
+c= \frac{1}{1+\a\cdot \b}\cdot A\cdot k^{\a}.
+\end{align*}
+Therefore, the value function after the second iteration is
+\begin{align*}
+V_{2}\bp{k} &=\ln{\frac{1}{1+\a \cdot\b}\cdot A\cdot k^{\a}} +\b \ln{A\cdot \bp{\frac{\a \cdot \b}{1+\a\cdot  \b}\cdot A\cdot k^{\a}} ^{\a}}.
+\end{align*}
+It is convenient to write 
+\begin{align*}
+V_{2}\bp{k} &=\kappa_{2}+\bp{1+\a\cdot  \b}\cdot  \ln{k^{\a}}
+\end{align*}
+where $\kappa_{2}$ is a constant.
+\item Using~\eqref{eq:EQ1}, we infer that the policy function satisfies
+\[k'\bp{k} =\a\cdot \b\cdot  A\cdot k^{\a}\]
+and equivalently
+\[c\bp{k} =\bp{1-\a\cdot \b}\cdot  A\cdot k^{\a}.\]
+
+\item Dynamic programming sometimes allows us to find closed-form solution to optimization problems, which the Lagrangian method would not allow us to do. Even if it does not allow us to find closed-form solutions, dynamic programming sometimes allows us to find some theoretical properties of the solution. Last, dynamic programs can be (sometimes easily) solved with numerical methods.
+\end{enumerate}
+
+\section*{Solution to Exercise 2.}
+
+\begin{enumerate}
+\item The state variable are the amount of shares $s_{t}$ and the dividend $d_{t}$.  The
+control variables is consumption $c_{t}$. Since $c_{t}$ and $s_{t+1}$ are linked through the budget, we can also choose $s_{t+1}$ as control variable. As usual, we pick $s_{t+1}$ as control variable to simplify derivations.
+\item The Bellman equation is 
+\begin{align*}
+V(s,d) = \max[s']{u\bp{\bp{p+d}\cdot s-p\cdot s'} +\b \cdot\E{V\bp{s',d'} \mid d}}
+\end{align*}
+\item The first-order condition with respect to $s'$ in the Bellman equation is
+\begin{align*}
+-p\cdot \od{u}{c}\bp{c} +\b \cdot \E{\pd{V\bp{s',d'}}{s'} \mid d} =0.
+\end{align*}
+The Benveniste-Scheinkman equation is
+\begin{align*}
+\pd{V(s,d)}{s} =\bp{p+d} \cdot \od{u}{c}\bp{c}.
+\end{align*}
+Combining both equations we obtain the following Euler equation:
+\begin{align*}
+p\cdot \od{u}{c}\bp{c} =\b \cdot \E{\bp{d'+p'}\cdot  \od{u}{c}\bp{c'} \mid d} .
+\end{align*}
+
+\item With $u\bp{c} =c$, $du/dc=1$ and the Euler equation becomes 
+\begin{align*}
+p=\b \cdot \E{\bp{d'+p'} \mid d} .
+\end{align*}
+Let $p_{h}$ be the price when today's dividend is high, and let $p_{l}$ be the price when today's dividend is low.
+\begin{align*}
+p_{h} &=\b \cdot \bs{\rho\cdot  \bp{d_{h}+p_{h}} +\bp{1-\rho}\cdot \bp{d_{l}+p_{l}}} \\
+p_{l} &=\b \cdot \bs{\rho \cdot \bp{d_{l}+p_{l}} +\bp{1-\rho}\cdot \bp{d_{h}+p_{h}}}
+\end{align*}
+which implies
+\begin{align*}
+p_{h}-p_{l}=\b\cdot \frac{2\cdot \rho -1 }{1-\bs{\b \cdot \bp{2\cdot \rho -1}}}\cdot \bp{d_{h}-d_{l}}>0
+\end{align*}
+because $0.5<\rho<1$. So the price is higher when the dividend is higher.
+\end{enumerate}
+
+\section*{Solution to Exercise 3.}
+
+\begin{enumerate}
+\item $k$ is the state variable and $\bp{k',l} $ are the control variables.
+\item The Bellman equation is 
+\begin{align*}
+V\bp{k} =\underset{k',l}{\max}\bc{u\bs{f\bp{k,l} -k',l} +\b\cdot  V(k')}
+\end{align*}
+\item The first-order conditions with respect to $k'$ and $l$ in the Bellman equation are
+\begin{align*}
+-\pd{u}{c}(c,l)+\b \cdot \od{V}{k}\bp{k'}& =0 \\
+\pd{u}{c}(c,l)\cdot \pd{f}{l}(k,l)+\pd{u}{l}(c,l)&=0 .
+\end{align*}
+The Benveniste-Scheinkman equation is
+\begin{align*}
+\od{V}{k}\bp{k} =\pd{u}{c}(c,l)\cdot \pd{f}{k}(k,l)
+\end{align*}
+We combine these equations to get
+\begin{align}
+\pd{u}{c}(c,l) &=\b \cdot \pd{u}{c}\bp{c',l'} \cdot \pd{f}{ k}\bp{k',l'}\label{ee} \\
+\pd{u}{c}\bp{c,l}\cdot \pd{f}{l}\bp{k,l}&=-\pd{u}{l}\bp{c,l}.
+\end{align}
+
+\item In steady state, we have $l=l^{*}$, $c=c^{*}$, and $k=k^{*}$. Using \eqref{ee} and the functional form of $f$, we obtain
+\begin{align*}
+\a \cdot \b\cdot  \bp{\frac{k^{*}}{l^{*}}}^{\a-1}&=1\\
+\frac{k^{*}}{l^{*}}=\bp{\a\cdot  \b}^{1/\bp{1-\a}}.
+\end{align*}
+Then use the law of motion of capital implies 
+\begin{align*}
+\frac{c^{*}}{k^{*}}=\bp{\frac{k^{*}}{l^{*}}}^{\a-1}-1=\frac{1}{\a \cdot \b}-1.
+\end{align*}
+
+\item The Bellman equation is 
+\begin{align*}
+V\bp{A,k} =\max_{k',l}\bc{u\bs{A\cdot f\bp{k,l}-k',l} +\b \cdot \E{ V\bp{A',k'}\mid A}}
+\end{align*}
+where $\bp{A,k} $ are the state variables and $\bp{k',l} $ are the control variables.
+
+\item The first-order conditions with respect to $k'$ and $l$ become
+\begin{align*}
+-\pd{u}{c}(c,l)+\b \cdot \E{\pd{V}{k'}\bp{A',k'}\mid A} &=0 \\
+A\cdot \pd{u}{c}(c,l)\cdot \pd{f}{l}(k,l)+\pd{u}{l}(c,l)&=0.
+\end{align*}
+The Benveniste-Scheinkman equation becomes
+\begin{align*}
+\pd{V}{k}\bp{A,k}=A\cdot \pd{u}{c}(c,l)\cdot \pd{f}{k}(k,l).
+\end{align*}
+The Euler condition is
+\begin{align*}
+\pd{u}{c}(c,l)=\b \cdot \E{A'\cdot \pd{u}{c}(c',l')\cdot \pd{f}{k}(k',l')\mid A}.
+\end{align*}
+\end{enumerate}
+
+\section*{Solution to Exercise 4.}
+
+\begin{enumerate}
+\item The present-value Hamiltonian is
+\begin{align*}
+\Hc(t)=e^{-\rho\cdot  t}\cdot \ln{c(t)} +\l(t) \bs{f\bp{k(t)} -c(t)-\d\cdot  k(t)}
+\end{align*}
+where $\l(t)$ is the co-state variable associated with the state variable $k(t)$.
+\item The optimality conditions for the present-value Hamiltonian are
+\begin{align*}
+\pd{\Hc(t)}{c(t)} &=0\\
+\pd{\Hc(t)}{k(t)} &=-\dot{\l}(t)\\
+\lim_{t\to+\infty}\l(t)\cdot k(t)&=0.
+\end{align*}
+The last condition is the transversality condition. The first two conditions imply that 
+\begin{align}
+e^{-\rho \cdot t}\cdot \frac{1}{c(t)} =\l(t)\label{eq:HAM1} \\
+\l(t)\cdot  \bs{f'\bp{k(t)} -\d} =-\dot{\l}(t).\label{eq:HAM2}
+\end{align}
+We can eliminate $\l(t)$ by taking log and differentiating \eqref{eq:HAM1} with respect to time $t$. This procedure yields
+\begin{align*}
+\frac{\dot{\l}(t)}{\l(t)}=-\rho -\frac{\dot{c}(t)}{c(t)}
+\end{align*}
+We can then substitute $\dot{\l}(t)/\l(t)$ into \eqref{eq:HAM2}, which gives the following Euler equation
+\begin{align*}
+\frac{\dot{c}(t)}{c(t)} &=\a\cdot A\cdot k(t)^{\a -1}-\bp{\d +\rho} .
+\end{align*}
+\item The steady state is given by
+\begin{align*}
+k^*&=\bp{\frac{\a\cdot A}{\d +\rho}} ^{1/\bp{1-\a}}\\
+c^*&=A^{1/\bp{1-\a}}\bp{\frac{\a}{\d +\rho}}^{\a /\bp{1-\a}}\cdot \bp{\frac{\d \cdot \bp{1-\a} +\rho}{\d +\rho}}.
+\end{align*}
+\end{enumerate}
+
+
+\section*{Solution to Exercise 5.}
+\begin{enumerate}
+\item The current-value Hamiltonian is
+\begin{align*}
+\Hc^{*}(t)=f\bp{k(t)} -i(t)-\frac{\chi}{2}\cdot \bp{\frac{i(t)^{2}}{k(t)}}+q(t)\cdot i(t), 
+\end{align*}
+where $q(t)$ is the co-state variable associated with the state variable $k(t)$.
+\item There are two optimality conditions for the current-value Hamiltonian. (We omit the transversality condition.) The first optimality condition is
+\begin{align*}
+0&=\pd{\Hc^{*}(t)}{i(t)} \\
+0&=-1-\chi \cdot \bs{\frac{i(t)}{k(t)}}+q(t) \\
+i(t)&=\bs{\frac{q(t)-1}{\chi}}\cdot k(t),
+\end{align*}
+which implies, using the law of motion of capital, that
+\begin{align*}
+\dot{k}(t)&=\bs{\frac{q(t)-1}{\chi}}\cdot k(t).
+\end{align*}
+The second optimality condition is
+\begin{align*}
+\pd{\Hc(t)}{k(t)} &=r\cdot q(t)-\dot{q}(t)\\
+f'(k(t)) +\frac{\chi}{2}\cdot \bs{\frac{i(t)}{k(t)}}^{2}&=r\cdot q(t)-\dot{q}(t)
+\end{align*}
+The first optimality condition implies that $i(t)/k(t)=\dot{k}(t)/k(t)=(q(t)-1)/\chi$. So this optimality condition becomes
+\begin{align*}
+\dot{q}(t)&=r\cdot q(t)-f'(k(t))-\frac{1}{2\cdot \chi}\cdot \bp{q(t)-1}^{2}.
+\end{align*}
+\item In steady state, $\dot{q}(t)=0$ and $\dot{k}(t)=0$, so $i^{*}=0$. Notice that we can say that $\dot{q}(t)=0$ only because $q(t)$ is the co-state variable used with a current-value Hamiltonian. The co-state variables used in a present-value Hamiltonian are not constant in steady state (which is a reason why we prefer to work with a current-value Hamiltonian). Since $\dot{k}(t)=0$, the first optimality condition implies
+\begin{align*}
+q^{*}=1.
+\end{align*}
+Since $q^{*}=1$ and $\dot{q}(t)=0$, the second optimality condition implies
+\begin{align*} 
+f'(k^{*})=r.
+\end{align*}
+\end{enumerate}
+
+\section*{Solution to Exercise 6.}
+
+We multiply both sides of the differential equation by the integrating factor $\mu (t)=e^{-r\cdot t}$. We obtain
+\begin{align*}
+\dot{a}(t)\cdot e^{-r\cdot t}-r\cdot a(t) \cdot e^{-r\cdot t}&=s\cdot e^{-r\cdot t}\\
+\od{\bs{a(t)\cdot e^{-r\cdot t}}}{t}&=s\cdot e^{-r\cdot t}
+\end{align*}
+Integrating from time $0$ to $t$, 
+\begin{align*}
+\int_{0}^{t}d\bs{a(t)\cdot e^{-r\cdot t}}&=\int_{0}^{t} s\cdot e^{-r\cdot t} dt\\
+a(t)\cdot e^{-r\cdot t}-a(0)&=-\frac{s}{r}\cdot e^{-r\cdot t}+\frac{s}{r}.
+\end{align*}
+Therefore, as $a(0)=a_{0}$, the solution to the initial value problem must satisfy 
+\begin{align*}
+a(t)=a_{0}\cdot e^{r\cdot t}+\frac{s}{r}\bp{e^{r\cdot t}-1}.
+\end{align*}
+
+\section*{Solution to Exercise 7.}
+
+The integrating factor is now
+\begin{align*}
+\mu (t)=\exp \bp{-\int_{0}^{t}r(w) dw} .
+\end{align*}
+Notice that the derivative of the integrating factor satisfies
+\begin{align*}
+\dot{\mu} (t)=-r(t)\cdot \mu(t)
+\end{align*}
+(which is why we picked this specific integrating factor). We multiply both sides of the differential equation by the integrating factor. The differential equation becomes
+\begin{align*}
+\dot{a}(t)\cdot \mu (t)- a(t)\cdot r(t)\cdot \mu (t)&=s(t)\cdot \mu (t)\\
+\dot{a}(t)\cdot \mu (t)- a(t)\cdot  \dot{\mu} (t)&=s(t)\cdot \mu (t)\\
+\od{\bs{a(t)\cdot \mu (t)}}{t}&=s(t)\cdot \mu (t).
+\end{align*}
+Integrating from time $0$ to $t$, 
+\begin{align*}
+a(t)\cdot \mu (t)-a(0)\cdot \mu(0)&=\int_{0}^{t}s(z) \cdot \mu (z) dz\\
+a(t)&=\frac{a_{0}}{\mu (t)}+\int_{0}^{t}s(z) \cdot \frac{\mu (z)}{\mu (t)} dz\\
+a(t)&=a_{0}\cdot \exp \bp{\int_{0}^{t}r(z) dz}+\int_{0}^{t}s(z) \cdot  \exp \bp{\int_{z}^{t}r(w) dw} dz.
+\end{align*}
+This equation reduces to the solution of exercise 6 when both $r$ and $s$ are constant. 
+
+
+
+\section*{Solution to Exercise 8.}
+\begin{enumerate}
+\item We are facing a linear, two-variable, homogenous system of FODEs. To find the general solution of the system, we need the eigenvalues and eigenvectors of the matrix 
+\begin{align*}
+\bm{A}=\bs{
+\begin{array}{ll}
+1 & 1 \\ 
+4 & 1 
+\end{array}}.
+\end{align*}
+
+First, we determine the eigenvalues. The eigenvalues $\l$ are the roots of the polynomial $\det(\bm{A}-\l\cdot \bm{I})$. So the eigenvalues $\l$ solve
+ \begin{align*}
+\det\bs{\begin{array}{ll}
+1-\lambda & 1 \\ 
+4 & 1-\lambda 
+\end{array}} =0
+\end{align*}
+Hence, the eigenvalues $\l$ are solutions to
+\begin{align*}
+\bp{1-\lambda} ^{2}-4=0
+\end{align*}
+So there are two distinct eigenvalues: $\l_{1}=$ $3$ and $\l_{2}=-1$.
+
+Second, we determine the eigenvectors. The eigenvector $[\a,\b]$ associated with the eigenvalue $\l$ solves
+\begin{align*}
+\bs{
+\begin{array}{ll}
+1-\lambda & 1 \\ 
+4 & 1-\lambda 
+\end{array}
+} \bs{
+\begin{array}{l}
+\a \\ 
+\b 
+\end{array}} =\bs{
+\begin{array}{l}
+0\\ 
+0
+\end{array}}
+\end{align*}
+To determine the eigenvector associated with $\lambda_{1}=3$, we solve 
+\begin{align*}
+\bs{\begin{array}{ll}
+-2& 1\\ 
+4 & -2
+\end{array}
+} \bs{
+\begin{array}{l}
+\a \\ 
+\b
+\end{array}} =\bs{
+\begin{array}{l}
+0\\ 
+0
+\end{array}}
+\end{align*}
+which reduces to the single equation
+\begin{align*}
+-2\cdot \a +\b =0
+\end{align*}
+thus $\b =2\cdot \a $, and the eigenvector corresponding to $\l_{1}=3$ is 
+\begin{align*}
+\bm{z}_{1}=\bs{
+\begin{array}{l}
+1 \\ 
+2
+\end{array}} .
+\end{align*}
+Similarly, the eigenvector corresponding to $\l_{2}=-1$ is 
+\begin{align*}
+\bm{z}_{2}=\bs{
+\begin{array}{l}
+1 \\ 
+-2
+\end{array}}.
+\end{align*}
+Using the eigenvalues and eigenvectors that we have determined, we conclude that the general solution of the system is 
+\begin{align*}
+\bm{x}(t)=c_{1}\cdot \bs{
+\begin{array}{l}
+1 \\ 
+2
+\end{array}} \cdot e^{3\cdot t}+c_{2}\cdot \bs{
+\begin{array}{l}
+1 \\ 
+-2
+\end{array}}\cdot e^{-t},
+\end{align*}
+where $c_{1}$ and $c_{2}$ are arbitrary constants. 
+
+\item To determine a specific solution, we would need two boundary conditions that would allow us to determine the two constants $c_{1}$ and $c_{2}$.
+\item Since the linear, two-variable, homogenous system has two eigenvalues of opposite sign, the trajectories of the system have the origin as a saddle point. See the treatment of the two-variable linear system with two eigenvalues of opposite sign in the lecture notes.
+\end{enumerate}
+
+\section*{Solution to Exercise 9.}
+
+\begin{enumerate}
+\item $f(k)=k^{\a}$ with $\a\in(0,1)$ satisfies the Inada conditions.
+\item Steady-state capital $k^*$ is implicitly determined by
+\begin{align*}
+s\cdot f\bp{k^*} =\d \cdot k^*.
+\end{align*}
+
+\item Plot $k$ on the x-axis. Draw two curves $y=s\cdot f\bp{k} $ and $y=\d\cdot k$. The $y=s\cdot f\bp{k}$ curve is the saving curve. It is increasing and concave . The $y=\d\cdot  k$ curve is the depreciation curve. It is an increasing straight line. The intersection of these two curves is the steady state. Starting
+from an initial $k_{0}$, $k(t)$ converge to $k^*$. This is because if $k(t)$ is to the left of $k^*$, $\dot{k}>0$
+so $k(t)$ increases to $k^{*}$; and if $k(t)$ is to the right of $k^*$, $\dot{k}<0$, so $k(t)$ decreases to $k^{*}$.
+\end{enumerate}
+
+\section*{Solution to Exercise 10.}
+\begin{enumerate}
+\item See lecture notes.
+\item  The Jacobian matrix at the steady state is
+\begin{align*}
+\bm{J}^{*}=\bs{
+\begin{array}{ll}
+\rho  & -1 \\ 
+\a \cdot \bp{\a -1}\cdot  A\cdot k^{\a -2} & 0
+\end{array}} 
+\end{align*}
+\item To show that the steady state is a saddle point locally, we must show that the eigenvalues of the Jacobian matrix evaluated at the steady state have opposite sign. The determinant of the Jacobian matrix is  $\det \bp{\bm{J}^{*}} =\a\cdot  \bp{\a -1}\cdot A\cdot k^{\a -2}<0$. As explained in the lecture notes, the two eigenvalues have opposite sign and the steady state is a saddle point locally.
+
+\item An unanticipated decrease in $\rho $ at time $t_{0}$ means that the $\dot{c}=0$ locus shifts to the right at time $t_{0}$. The new steady state is $\bp{k^{**},c^{**}} $ with $k^{* *}>k^*$ and $c^{* *}>c^*$. There is a new saddle path for the new steady state. Given that $k$ is predetermined, it must remain at its steady-state level at $t_{0}$: $k\bp{t_{0}} =k^*$. Only consumption adjusts to bring the economy on the new saddle path. Thus at time $t_{0}$, the economy jumps to a point $\bp{k^*,c\bp{t_{0}}}$ on the new saddle path. Then it moves along the saddle path to converge to the new steady state.
+\end{enumerate}
+
+\section*{Solution to Exercise 11.}
+\begin{enumerate}
+\item We plot the phase diagram in a $(k,q)$ plane. The $\dot{k}(t)=0$ locus is horizontal. The $\dot{q}(t)=0$ locus is described implicitly by
+\begin{align*}
+f''\bp{k} \cdot \pd{k}{q}=r-\frac{q-1}{\chi}.
+\end{align*}
+There is no clear sign for the slope of the $\dot{q}(t)=0$ locus. However, if we are close to the steady state,  $q$ is close to 1. So the $\dot{q}(t)=0$ locus must be downward sloping.
+\item The two differential equations show that $k(t)$ increases if we are to the right of the $\dot{k}(t)=0$ locus, and $q(t)$ increases if we are above the $\dot{q}(t)=0$ locus. Again, we have a saddle point locally.
+\end{enumerate}
+
+
+\section*{Solution to Exercise 12.}
+
+\begin{enumerate}
+\item By definition
+\begin{align*}
+\D &k=f\bp{k} -\d\cdot  k-c \\
+\D &c=\bs{\b \cdot \bp{f'(k) +1-\d} -1}\cdot  c.
+\end{align*}
+Hence, the locus $\D k=0$ is defined by
+\begin{align*}
+c=f\bp{k} -\d\cdot  k,
+\end{align*}
+and the locus $\D c=0$ is defined by
+\begin{align*}
+f'(k) =\frac{1}{\b}-1+\d.
+\end{align*}
+The intersection of these two curves is the steady state $\bp{k^*,c^*} $. The $\D k=0$ locus is concave in the $(k,c)$ plane while the $\D c=0$ locus is a vertical line passing through $k^*$.
+
+\item Follow the same procedure as that described in the lecture notes to analyze systems of nonlinear differential equations.
+\end{enumerate}
+
+\section*{Solution to Exercise 13}
+\begin{enumerate}
+\item $c(t)$ and $l(t)$ are the control variables. $k(t)$ and $h(t)$ are the state variables.
+\item The present-value Hamiltonian is
+\begin{align*}
+\Hc(t)=e^{-\rho \cdot t}\cdot \ln{c(t)} +\l^{k}(t)\cdot \bs{y(t)-c(t)-\d\cdot  k(t)} +\l^{h}(t) B\cdot \bp{1-l(t)}\cdot  h(t),
+\end{align*}
+where $\l^{h}(t)$ and $\l^{k}(t)$ are the co-state variables associated with the law of motion of human capital $h(t)$ and physical capital $k(t)$.
+
+\item The optimality conditions are
+\begin{align*}
+\pd{\Hc(t)}{c(t)} &=0\\
+\pd{\Hc(t)}{l(t)}&=0 \\
+\pd{\Hc(t)}{k(t)} &=-\dot{\l}^{k}(t)\\
+\pd{\Hc(t)v}{h(t)}&=-\dot{\l}^{h}(t).
+\end{align*}
+These conditions simplify to
+\begin{align}
+e^{-\rho \cdot t}\cdot \frac{1}{c(t)} &=\l^{k}(t) \label{FOCc} \\
+\l^{k}(t)\cdot \b \cdot\frac{ y(t)}{l(t)} &=\l^{h}(t)\cdot B\cdot h(t)  \label{FOCu} \\
+\l^{k}(t)\cdot \bs{\a\cdot  \frac{y(t)}{k(t)}-\d} &=-\dot{\l}^{k}(t)  \label{statek}\\
+\l^{k}(t)\cdot \b \cdot\frac{ y(t)}{h(t)}+\l^{h}(t)\cdot B\cdot \bs{1-l(t)} &=-\dot{\l}^{h}(t)\label{stateh}.
+\end{align}
+\item The growth rate of $c(t)$ follows from the combination of equations~\eqref{FOCc} and~\eqref{statek}.
+
+\item The equality of equation \eqref{FOCu} holds for
+interior solution only, i.e. $0<l<1$. When $B=0$, the optimal solution is $
+l=1$.
+
+\item The dynamic equations of the equilibrium are:
+\begin{align*}
+\dot{k} &=A\cdot k^{\a}\cdot h_{0}^{\b}-c-\d \cdot k \\
+\frac{\dot{c}}{c} &=\a\cdot A\cdot k^{\a -1}\cdot h_{0}^{\b}-\bp{\d +\rho} \\
+\dot{h} &=0
+\end{align*}
+Since $h_{0}$ is simply a constant, this system has a steady state $\bp{k^*,c^*} $ where $\dot{k}=\dot{c}=0$. The steady state satisfies 
+\begin{align*}
+\a\cdot A\cdot \bp{k^*}^{\a -1}\cdot h_{0}^{\b}=\d +\rho.
+\end{align*}
+To draw the phase diagram from here, see lecture notes.
+\item To show that the steady state is a saddle point graphically, see lecture notes.
+\item The Jacobian is given by
+\begin{align*}
+\bm{J}^{*}=\bs{
+\begin{array}{lr}
+\pdw{\dot{k}}{k}{(k^{*},c^{*})}  & \pdw{\dot{k}}{c}{(k^{*},c^{*})} \\ 
+\pdw{\dot{c}}{k}{(k^{*},c^{*})} & \pdw{\dot{c}}{c}{(k^{*},c^{*})}
+\end{array}}=\bs{
+\begin{array}{lr}
+\rho  & -1 \\ 
+\bp{\a -1} \a\cdot A\cdot \bp{k^*} ^{\a-2}h_{0}^{\b} & 0
+\end{array}}
+\end{align*}
+\item It follows that the steady state is a saddle point locally because the determinant of the Jacobian matrix is negative: \[\det \bp{\bm{J}^{*}} =\bp{\a-1}\cdot  \a\cdot A\bp{k^*}^{\a-2}\cdot h_{0}^{\b}<0,\] 
+which implies that the two eigenvalues of the system have opposite sign. 
+\end{enumerate}
+
+
+\end{document}

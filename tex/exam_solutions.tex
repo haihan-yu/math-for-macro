@@ -1,0 +1,172 @@
+\documentclass[letterpaper,12pt,leqno]{article}
+\usepackage{paper,math,notes}
+
+\begin{document}
+
+\title{Mathematical Methods for Macroeconomics: Exam Solutions}
+\author{Pascal Michaillat}
+\date{}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+
+\section*{Question 1.}
+
+\begin{enumerate}
+\item State variable: $k(t)$. Control variable: $c(t)$. Current-value Hamiltonian:
+\[H^{*}(t)=\frac{c(t)^{1-\s}-1}{1-\s} +q(t)\cdot \left[k(t)^{\a}-c(t)-\d \cdot k(t)\right],\]
+where $q(t)$ is the co-state variable. We have the following optimality conditions:
+
+\begin{itemize}
+
+\item First optimality condition:
+\begin{align*}
+\frac{\partial H^{*}(t)}{\partial c(t)}&=0\\
+c(t)^{-\s}&=q(t).
+\end{align*}
+
+\item Second optimality condition:
+\begin{align*}
+\frac{\partial H^{*}(t)}{\partial k(t)}&=\rho\cdot q(t)-\dot{q}(t)\\
+q(t)\cdot \left[\a\cdot k(t)^{\a-1}-\d -\rho\right]&=-\dot{q}(t)\\
+\left[\a\cdot k(t)^{\a-1}-\d -\rho\right]&=-\frac{\dot{q}(t)}{q(t)}\\
+\end{align*}
+
+\item Third optimality condition: the transversality condition
+\begin{align*}
+\lim_{t\to +\infty} e^{-\rho\cdot t}\cdot q(t)\cdot k(t)=0.
+\end{align*}
+
+\end{itemize}
+
+\item Take the log of the first optimality condition, differentiate with respect to time $t$, and plug the result from the second optimality condition:
+\begin{align*}
+-\s\cdot \ln [c(t)]&=\ln[q(t)]\\
+\s\cdot \frac{\dot{c}(t)}{c(t)}&=-\frac{\dot{q}(t)}{q(t)}\\
+\frac{\dot{c}(t)}{c(t)}&=\frac{1}{\s}\cdot \left[\a\cdot k(t)^{\a-1}-\d -\rho\right].
+\end{align*}
+
+
+\item The optimal functions $\{k(t),c(t)\}$ are described by a system of two equations: the Euler equation and the law of motion of $k(t)$. If $\a=1$ and $\s =1$, the system is
+\begin{align*}
+\left[
+\begin{array}{l}
+\dot{c}(t) \\ 
+\dot{k}(t)
+\end{array}
+\right] =\left[
+\begin{array}{lr}
+(1-\rho-\d)& 0\\
+-1 &(1-\d)
+\end{array}
+\right]\left[
+\begin{array}{l}
+c(t) \\ 
+k(t)
+\end{array}\right].
+\end{align*}
+This is a linear, homogenous system of first-order differential equations.
+
+We compute the eigenvalues $\l$ of the system. $\l$ solves
+\begin{align*}
+\det\left[
+\begin{array}{lr}
+1-\rho-\d-\l& 0\\
+-1 &1-\d-\l
+\end{array}\right]=0.
+\end{align*}
+Hence, $\l$ solves
+\begin{align*}
+[(1-\rho-\d)-\l]\cdot [(1-\d)-\l]=0.
+\end{align*}
+Therefore the system admits two distinct positive eigenvalues:
+\begin{align*}
+\l_{1}&=1-(\rho+\d)>0\\
+\l_{2}&=1-\d>0.
+\end{align*}
+We are facing a linear homogenous system of first-order differential equations with two positive eigenvalues are positive:  the system is unstable.
+
+
+\item The optimal functions $\{k(t),c(t)\}$ are described by a system of two equations: the Euler equation and the law of motion of $k(t)$. If $\a<1$, the system is
+\begin{align*}
+\dot{c}(t)&=\frac{1}{\s}\cdot \left[\a\cdot k(t)^{\a-1}-\d -\rho\right]\cdot c(t)\\
+\dot{k}(t) &=k(t)^{\a}-c(t)-\d \cdot k(t).
+\end{align*}
+This is a nonlinear system of first-order differential equations.
+
+We draw the phase diagram with the state variable $k$ on the x-axis
+and the control variable $c$ on the y-axis. The locus $\dot{c}(t)=0$ and the locus $\dot{k}(t)=0$ satisfy
+\begin{align*}
+k(t)&=\left[\frac{\d +\rho}{\a}\right]^{-1/(1-\a)}\equiv k^{*}\\
+c(t)&=k(t)^{\a}-\d\cdot k(t).
+\end{align*}
+The locus  $\dot{c}(t)=0$ is a vertical line. The locus $\dot{k}(t)=0$ is a concave curve that goes through the origin and that cuts the x-axis again at $k^{**}=\d^{-1/(1-\a)}$. Since $\rho>0$ and $\a<1$, $k^{**}>k^{*}$ and the concave curve crosses the vertical curve when it is positive. The steady state of the system is the intersection of the locus  $\dot{c}(t)=0$  and the locus $\dot{k}(t)=0$.
+
+Look at the equation for $\dot{c}(t)$ to determine the vertical arrows. Since $\a\cdot k^{\a-1}-\d -\rho$ decreases with $k$, $\dot{c}(t)>0$ to the west of $\dot{c}(t)=0$  and $\dot{c}(t)<0$  to the east of $\dot{c}(t)=0$. So the vertical arrows point northwards to the west of $\dot{c}(t)=0$ and southwards to the east of $\dot{c}(t)=0$. 
+
+Look at the equation for $\dot{k}(t)$ to determine the horizontal arrows. Clearly, $\dot{k}(t)>0$ to the south of $\dot{k}(t)=0$ and $\dot{k}(t)<0$ to the north of $\dot{k}(t)=0$. So the horizontal arrows point eastwards to the north of $\dot{k}(t)=0$ and westwards to the south of $\dot{c}(t)=0$. 
+
+Therefore, the steady state of the system is a saddle point. The saddle path goes through the south-west and north-east regions of the plane. 
+
+\end{enumerate}
+
+
+\section*{Question 2.} 
+
+\begin{enumerate}
+\item The Lagrangian associated with the problem is
+\begin{align*}
+L=\sum_{t=0}^{+\infty}\b^t \cdot\{\ln(c_t)-\l_{t}\cdot [k_{t+1}-(1+r)\cdot k_{t}+c_{t}]\},
+\end{align*}
+where  $\{\l_t\}_{t=1}^{+\infty}$ is the sequences of Lagrange multipliers associated with the sequences of constraints.
+
+\item The first-order conditions with respect to $c_{t}$ and $k_{t+1}$ are
+\begin{align*}
+\frac{1}{c_{t}}&= \l_{t}\\
+\l_{t}&= \b\cdot(1+r)\cdot\l_{t+1}.
+\end{align*}
+
+\item Combining the first-order conditions yields the Euler equation:
+\[\frac{c_{t+1}}{c_{t}}=\b\cdot (1+r).\]
+
+\item State variable: $k$. Control variable: $k'$ (the value of variable $k$ next period). Bellman equation:
+\[V(k)=\max_{k'} [\ln((1+r)\cdot k-k')+\b\cdot V(k')].\]
+
+\item  The first-order condition with respect to $k'$ in the Bellman equation is
+\[\frac{1}{c}=\b\cdot V'(k').\]
+
+\item We apply the envelope theorem to the Bellman equation:
+\[V'(k)=\frac{(1+r)}{c}.\]
+
+\item The Benveniste-Scheinkman equation holds for any $k$. In particular, $V'(k')=(1+r)/c'$. Combining this equation with the first-order condition yields the Euler equation:
+\[\frac{c'}{c}=\b\cdot (1+r).\]
+This Euler equation is the same as that obtained with the Lagrangian method. The two methods are equivalent.
+
+\item We guess that optimal consumption $c=h(k)=A\cdot (1+r)\cdot k$. A first implication is that
+\[\frac{c'}{c}=\frac{A\cdot (1+r)\cdot k'}{A\cdot (1+r)\cdot k}=\frac{k'}{k}.\]
+Using the Euler equation, we obtain
+\[\frac{k'}{k}= \frac{c'}{c}=(1+r)\cdot \b.\]
+The transition equation then implies \[c=(1+r)\cdot k-k'=(1-\b)\cdot (1+r)\cdot k.\] Therefore, it must be that \[A=(1-\b).\] 
+
+\item The Bellman equation can be written in terms of the policy function:
+\[V(k)=\ln(h(k))+\b\cdot V((1+r)\cdot k-h(k)).\]
+We plug our guess for the value function and the expression for the policy function into the Bellman equation:
+\[B+D\cdot \ln(k)=\ln((1-\b)\cdot (1+r)\cdot k)+\b\cdot[B+D\cdot \ln(\b\cdot (1+r) \cdot k)].\] 
+Rearranging the terms on the right-hand side yields
+\[B+D\cdot \ln(k)=[\ln((1-\b)\cdot (1+r))+\b\cdot B+\b\cdot D\cdot \ln(\b\cdot (1+r))]+[1+\b\cdot D]\cdot \ln(k).\] 
+This equation must hold for any $k$ so it is necessary that
+\begin{align*}
+D&=1+\b\cdot D\\
+D&=\frac{1}{1-\b}
+\end{align*}
+and
+\begin{align*}
+B&=\ln((1-\b)\cdot (1+r))+\b\cdot B+\b\cdot D\cdot \ln(\b\cdot (1+r))\\
+B&=\frac{(1-\b)\cdot \ln((1-\b)\cdot (1+r))+\b\cdot \ln(\b\cdot (1+r))}{(1-\b)^{2}}\\
+B&=\frac{(1-\b)\cdot \ln(1-\b)+\b\cdot \ln(\b)+\ln(1+r)}{(1-\b)^{2}}.
+\end{align*}
+\end{enumerate}
+
+\end{document}
