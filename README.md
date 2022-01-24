@@ -6,9 +6,9 @@ This repository contains material for a one-week graduate course on mathematical
 
 These lectures cover basic mathematical methods to study dynamical systems, in discrete time and in continuous time. Dynamical systems are systems that involve more than one time-period; they are prevalent in many areas of macroeconomics. The course covers three methods:
 
-1. Dynamic programming: to solve discrete-time dynamic optimization problems
-2. Optimal control: to solve continuous-time dynamic optimization problems
-3. Differential equations: to characterize dynamical systems
+1. Dynamic programming: to solve discrete-time optimization problems
+2. Optimal control: to solve continuous-time optimization problems
+3. Differential equations: to characterize continuous-time systems
 
 ## Material
 
