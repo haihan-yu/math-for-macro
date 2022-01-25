@@ -33,8 +33,8 @@ The `tex` folder contains the TEX files used to create the PDF files in the `pdf
 + `exercises_solutions.tex`: source for `exercises_solutions.pdf`
 + `exam.tex`: source for `exam.pdf`
 + `exam_solutions.tex`: source for `exam_solutions.pdf`
-+ `paper.sty`, `math.sty`, `notes.sty`: style files used in all the TEX files
-+ `phasediagrams.key`, `phasediagrams.pdf`: files with the figures imported into the TEX files
++ `paper.sty`, `math.sty`, `notes.sty`: style files used in the TEX files
++ `phasediagrams.key`, `phasediagrams.pdf`: figures imported into the TEX files
 
 ## Useful resources
 
