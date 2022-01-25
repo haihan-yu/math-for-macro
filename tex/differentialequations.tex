@@ -1,5 +1,6 @@
 \documentclass[letterpaper,12pt,leqno]{article}
 \usepackage{paper,math,notes}
+\newcommand{\pdf}{phasediagrams.pdf} 
 \available{https://www.pascalmichaillat.org/t3.html}
 \hypersetup{pdftitle={Differential Equations}}
 
@@ -24,7 +25,7 @@ Consider the equation
 \begin{equation}
 \dot{x}(t) -\l\cdot x(t) = 0
 \label{eq:FODE1}\end{equation}
-where $\l\in\R$ is a constant. Equation~\eqref{eq:FODE1} is a \textit{first-order differential equation} (FODE), because it involves $x(t)$ and the first-order derivative of $x(t)$ with respect to time: $\dot{x}(t)$.  Equation~\eqref{eq:FODE1} is a functional equation: the unknown is the function $x(t)$ rather than a number or a vector. Solving equation~\eqref{eq:FODE1} means finding the functions $x(t)$ that, together with their derivative $\dot{x}(t)$, satisfy equation~\eqref{eq:FODE1} for all $t \in \R$.
+where $\l\in\R$ is a constant. Equation~\eqref{eq:FODE1} is a first-order differential equation (FODE), because it involves $x(t)$ and the first-order derivative of $x(t)$ with respect to time: $\dot{x}(t)$.  Equation~\eqref{eq:FODE1} is a functional equation: the unknown is the function $x(t)$ rather than a number or a vector. Solving equation~\eqref{eq:FODE1} means finding the functions $x(t)$ that, together with their derivative $\dot{x}(t)$, satisfy equation~\eqref{eq:FODE1} for all $t \in \R$.
 
 Equation~\eqref{eq:FODE1} is an especially simple differential equation. It can be rewritten as 
 \[\frac{\dot{x}(t)}{x(t)}= \l,\]
@@ -128,14 +129,15 @@ We multiply both sides of equation~\eqref{eq:FODE3} by the integrating factor to
 \end{align*}
 Integrating the equation from $t_{0}\in \R$ to $t$ we obtain as earlier equation~\eqref{eq:INTER}. Therefore the solution to equation~\eqref{eq:FODE3} is necessarily of the type~\eqref{eq:FODE3sol}.
 
-\subsection{Initial Value Problem}
+\subsection{Initial-Value Problem}
+
 Often, an initial condition for $x(t) $ is given:
 \begin{equation}
 x\bp{t_{0}} =x_{0}.  \label{eq:ic}
 \end{equation}
-Equation~\eqref{eq:FODE3} together with equation~\eqref{eq:ic} form an \textit{initial value problem}. The constant $A$ in~\eqref{eq:FODE3sol} must satisfy
+Equation~\eqref{eq:FODE3} together with equation~\eqref{eq:ic} form an initial-value problem. The constant $A$ in~\eqref{eq:FODE3sol} must satisfy
 \[A=x_{0}\cdot \exp{-\int_{0}^{t_{0}}\l(s)ds}-\int_{0}^{t_{0}}f(z) \cdot \exp{-\int_{0}^{z}\l(s)ds} dz.\]
-Hence the solution to the initial value problem is
+Hence the solution to the initial-value problem is
 \begin{equation}
 x(t) =x_{0}\cdot \exp{\int_{t_{0}}^{t}\l(s)ds}+\int_{t_{0}}^{t}f(z)\cdot \exp{\int_{z}^{t}\l(s)ds}dz.\label{eq:icsol}
 \end{equation}
@@ -149,7 +151,6 @@ We often encounter dynamic systems with several variables that move together ove
 \end{align*}
 The first FODE is the asset accumulation equation and the second FODE is the Euler equation that characterizes optimal consumption over time. To solve explicitly for the optimal consumption path, we need to solve the two FODEs
 simultaneously. This section presents a method to solve systems of FODEs.
-
 
 We consider a system of $n$ FODEs with constant coefficients:
 \begin{align*}
@@ -208,11 +209,11 @@ The nature of the eigenvalues and corresponding eigenvectors determines the dyna
 
 \subsection{Homogenous Systems}
 
-If $\bm{f}(t) =\bm{0}$, the system \eqref{eq:FODEsys} is \textit{homogenous}; otherwise it is \textit{nonhomogenous}. 
+If $\bm{f}(t) =\bm{0}$, the system \eqref{eq:FODEsys} is homogenous; otherwise it is nonhomogenous. 
 
 For homogenous systems, 
 \begin{equation}
-\bm{\dot{x}}(t) =\bm{A} \bm{x}(t).  \label{eq:FODEsysh}
+\bm{\dot{x}}(t) =\bm{A} \bm{x}(t).\label{eq:FODEsysh}
 \end{equation}
 So the transformed system~\eqref{eq:FODEsyst} becomes 
 \begin{equation*}
@@ -238,8 +239,9 @@ eigenvalues $\l_{1},...\l_{n}$. Hence the solution of the homogenous system~\eqr
 The nature of the eigenvalues and the corresponding eigenvectors determines
 the dynamics of the solution. 
 
-\subsection{Example: Two-Variable Homogenous System}
-Consider a two-variable homogenous system
+\subsection{Closed-Form Solution to a Two-Variable Homogenous System}
+
+As an example, we consider a two-variable homogenous system:
 \begin{align*}
 \dot{x}_{1}(t) &=a\cdot x_{1}(t)+b\cdot x_{2}(t) \\
 \dot{x}_{2}(t) &=c\cdot x_{1}(t)+d\cdot x_{2}(t).
@@ -258,7 +260,6 @@ c & d
 \end{equation*}
 Assume $\det(\bm{A}) =a\cdot d-b\cdot c\neq 0. $
 
-\subsubsection{Closed-Form Solution}
 Equation~\eqref{eq:SOLEV} implies that to determine a closed-form solution of this homogenous system, we need to find the eigenvalues and eigenvectors of the matrix $\bm{A}$.
 
 The eigenvalues are solutions to 
@@ -313,74 +314,94 @@ Also note that any nonhomogenous system with constant terms $\bs{\k_{1},\k_{2}}$
 \end{align*}
 can be transformed into an homogenous system.
 
-
-\subsubsection{Stability}
+\subsection{Stability of a Two-Variable Homogenous System}
 
 Now that we have found a closed-form solution to the system, we can analyze its stability. There are three cases.
 
-\begin{itemize}
+\paragraph{Sink: $\l_{1}<0$ and $\l_{2}<0$} As shown by~\eqref{eq:DETL}, since $\l_{1}$ and $\l_{2}$ have the same sign, $\det(\bm{A}) >0$. As $t\to +\infty$, $x_{1}(t)\to 0$ and $x_{2}(t)\to 0$. The system is a \textit{sink}.
 
-\item  $\l_{1}<0$ and $\l_{2}<0$: As shown by~\eqref{eq:DETL}, since $\l_{1}$ and $\l_{2}$ have the same sign, $\det(\bm{A}) >0$. As $t\to +\infty$, $x_{1}(t)\to 0$ and $x_{2}(t)\to 0$. The system is \textit{stable}. The origin is called a \textit{sink}.
+\paragraph{Source: $\l_{1}>0$ and $\l_{2}>0$} As shown by~\eqref{eq:DETL}, since $\l_{1}$ and $\l_{2}$ have the same sign, $\det(\bm{A}) >0$. As $t\to +\infty$, $|x_{1}(t)|\to +\infty$ and $|x_{2}(t)|\to +\infty$. The system is a \textit{source}.
 
-\item $\l_{1}>0$ and $\l_{2}>0$: As shown by~\eqref{eq:DETL}, since $\l_{1}$ and $\l_{2}$ have the same sign, $\det(\bm{A}) >0$. As $t\to +\infty$, $|x_{1}(t)|\to +\infty$ and $|x_{2}(t)|\to +\infty$. The system is \textit{unstable}. The origin is called a \textit{source}.
+\paragraph{Saddle: $\l_{1}$ and $\l_{2}$ have opposite sign} As shown by~\eqref{eq:DETL}, since $\l_{1}$ and $\l_{2}$ have opposite sign, $\det(\bm{A}) <0$. One part of the solution is stable (it converges to 0 at $t\to +\infty$), the other is unstable (it converges to $\infty$ at $t\to +\infty$). The system is a \textit{saddle}.
 
-\item $\l_{1}$ and $\l_{2}$ have opposite sign: As shown by~\eqref{eq:DETL}, since $\l_{1}$ and $\l_{2}$ have opposite sign, $\det(\bm{A}) <0$. One part of the solution is stable (it converges to 0 at $t\to +\infty$), the other is unstable (it converges to $\infty$ at $t\to +\infty$). The origin $(0,0)$ is called a \textit{saddle point}.
-
-\end{itemize}
 
 \section{Phase Diagrams}\label{sec:three}
 
-Without solving for eigenvalues and eigenvectors explicitly, we can study the properties of a linear system of FODEs by drawing its \textit{phase diagram}. 
+Without solving for eigenvalues and eigenvectors explicitly, we can study the properties of a linear system of FODEs by drawing its phase diagram. 
 
-\subsection{Construction of the Phase Diagram}
-
-Consider the following linear nonhomogenous system of two FODEs:
+Here we construct the phase diagram for the following linear nonhomogenous system of two FODEs:
 \begin{align}
-\dot{x}_{1}(t) &=a\cdot x_{1}(t)+b\cdot x_{2}(t)+\k_{1} \label{eq:nonh1}\\
-\dot{x}_{2}(t) &=c\cdot x_{1}(t)+d\cdot x_{2}(t)+\k_{2},\label{eq:nonh2}
+\dot{x}(t) &=a\cdot x(t)+b\cdot y(t)+\k_{1}\label{eq:nonh1}\\
+\dot{y}(t) &=c\cdot x(t)+d\cdot y(t)+\k_{2}\label{eq:nonh2}
 \end{align}
-with $a<0$, $b<0$, $c<0$, $d>0$, $\k_{1}>0$, and $\k_{2}>0$. Since $a\cdot d-b\cdot c<0$, the eigenvalues of the system are of opposite sign. We are in a \textit{saddle-point equilibrium}.
+with $a<0$, $b<0$, $c<0$, $d>0$, $\k_{1}>0$, and $\k_{2}>0$. Since $a\cdot d-b\cdot c<0$, the eigenvalues of the system are of opposite sign. Hence the dynamical system is a saddle.
 
-We construct the phase diagram as follows:
+Drawing the phase diagram of a two-variable system is useful to understand the main features of the dynamic system without solving for $x(t) $ and $y(t)$ explicitly. The phase diagram is represented in figure~\ref{f:phase}.
 
-\begin{itemize}
+\begin{figure}[p]
+\subcaptionbox{Nullclines \label{f:phase1}}{\includegraphics[scale=\sfig,page=1]{\pdf}}\hfill
+\subcaptionbox{Steady state \label{f:phase2}}{\includegraphics[scale=\sfig,page=2]{\pdf}}\vfig
+\subcaptionbox{Directional arrows \label{f:phase3}}{\includegraphics[scale=\sfig,page=3]{\pdf}}\hfill
+\subcaptionbox{Trajectories \label{f:phase4}}{\includegraphics[scale=\sfig,page=4]{\pdf}}
+\caption{Phase diagram for the dynamical system \eqref{eq:nonh1}--\eqref{eq:nonh2}}
+\label{f:phase}\end{figure}
 
-\item Compute the two loci $\dot{x}_{1}=0$ and $\dot{x}_{2}=0$. The locus for $\dot{x}_{1}=0$ is given by
+
+\subsection{Nullclines}
+
+We first plot the nullclines, which are the loci $\dot{x}=0$ and $\dot{y}=0$ (figure~\ref{f:phase1}). 
+
+The locus for $\dot{x}=0$ is given by
 \begin{align*}
-x_{2}=-\frac{a}{b}\cdot x_{1}-\frac{\k_{1}}{b}.
+y=-\frac{a}{b}\cdot x-\frac{\k_{1}}{b}.
 \end{align*}
-The locus is a straight line with a negative slope in the $(x_{1},x_{2})$ plan. The locus  for $\dot{x}_{2}=0$ is given by
+The locus is a straight line with a negative slope in the $(x,y)$ plan. 
+
+The locus for $\dot{y}=0$ is given by
 \begin{align*}
-x_{2}=-\frac{c}{d}\cdot x_{1}-\frac{\k_{2}}{d}.
+y=-\frac{c}{d}\cdot x-\frac{\k_{2}}{d}.
 \end{align*}
-The locus is a straight line with positive slope in the $(x_{1},x_{2})$ plan.
+The locus is a straight line with positive slope in the $(x,y)$ plan.
 
-\item The intersection of the two loci is the \textit{steady-state solution}. Denote the intersection of the two loci as $\bp{x_{1}^{*},x_{2}^{*}} $. These two loci divide the $(x_{1},x_{2})$ plane into four areas.
+\subsection{Steady state}
 
-\item From~\eqref{eq:nonh1}, $\dot{x}_{1}$ is decreasing in $x_{2}$ because $b<0$. Thus any point above the $\dot{x}_{1}=0$ line must have $\dot{x}_{1}<0$ and any point below the $\dot{x}_{1}=0$ line must have $\dot{x}_{1}>0$. We represent these properties by an horizontal arrow pointing west for any point above the $\dot{x}_{1}=0$ line and an horizontal arrow pointing east for any point below the $\dot{x}_{1}=0$ line. 
+Next we place the system's steady state(figure~\ref{f:phase2}). The steady state is given by the intersection of the two nullclines. Denote the intersection of the two nullclines as $\bp{x^{*},y^{*}} $. These two nullclines divide the $(x,y)$ plane into four areas.\footnote{In some other fields the steady state of the system is called \textit{critical point} of the system.}
 
-Similarly, from \eqref{eq:nonh2}, $\dot{x}_{2}$ is increasing in $x_{2}$ because $d>0$. Thus any point above the $\dot{x}_{2}=0$ line must have $\dot{x}_{2}>0$ and any point below the $\dot{x}_{2}=0$ line must have $\dot{x}_{2}<0$. We represent these properties by a vertical arrow pointing north for any point above the $\dot{x}_{2}=0$ line and a vertical arrow pointing south for any point below the $\dot{x}_{2}=0$ line. 
+\subsection{Directional arrows}
 
-These sets of arrows are called \textit{streamlines}. They determine the trajectories of the system at any point in all the
-four areas. 
+Then we place on the diagram the directional arrows. These arrows determine the direction of the system's trajectories over time anywhere on the phase diagram (figure~\ref{f:phase3}). 
 
-\item Last, we derive the saddle path for the system. We know that such a saddle path exist because the eigenvalues of the system have opposite sign. 
+From~\eqref{eq:nonh1}, we see that $\dot{x}$ is decreasing in $y$ because $b<0$. Thus any point above the $\dot{x}=0$ line must have $\dot{x}<0$ and any point below the $\dot{x}=0$ line must have $\dot{x}>0$. We represent these properties by an horizontal arrow pointing west for any point above the $\dot{x}=0$ line and an horizontal arrow pointing east for any point below the $\dot{x}=0$ line. 
 
-\end{itemize}
-
-Drawing the phase diagram of a two-variable system is useful to understand the main features of the dynamic system without solving for $x_{1}(t) $ and $x_{2}(t) $ explicitly. The phase diagram is represented at the end of the lecture notes.
+Similarly, from \eqref{eq:nonh2}, $\dot{y}$ is increasing in $y$ because $d>0$. Thus any point above the $\dot{y}=0$ line must have $\dot{y}>0$ and any point below the $\dot{y}=0$ line must have $\dot{y}<0$. We represent these properties by a vertical arrow pointing north for any point above the $\dot{y}=0$ line and a vertical arrow pointing south for any point below the $\dot{y}=0$ line. 
 
 
-\subsection{Diagram with a State and a Control Variable}
+\subsection{Trajectories}
 
-Suppose $x_{1}$ is a state variable: information revealed at $t$ does not influence its value at $t$. Suppose $x_{2}$ is a control variable: information revealed at $t$ may influence its value at $t$. Suppose that we are in the steady state $\bp{x_{1}^{*},x_{2}^{*}}$ of the previous phase diagram.
+Using the directional arrows, we can draw trajectories that satisfy the system of differential equations (figure~\ref{f:phase4}). These are solutions to the system. To select a specific solution among all possible solutions, we will need to specify either an initial condition or a final condition.
 
-Assume that there is an exogenous, unanticipated increase in $\k_{2}$. This increase is revelation of news because it is an unanticipated change to one of the parameters or variables of the system. As $\k_{2}$ increases, the $\dot{x}_{2}=0$ locus shifts down, so the new steady state $\bp{x_{1}^{* *},x_{2}^{* *}} $ is to the south-east of the previous steady state: $x_{1}^{* *}>x_{1}^{*}$ and $x_{2}^{* *}<x_{2}^{*}.$ There is also a new saddle path passing through this new steady state.
+Among all the trajectories, we highlight the saddle path for the system. We know that such a saddle path exist because the eigenvalues of the system have opposite sign. The saddle path is the straight line that goes through the steady state.\footnote{The saddle path is also sometimes called a \textit{stable line} of the system. There is also an unstable line, which goes through the steady state but moves away from it.}
 
-Where do we start after the news is revealed at $t=t_{r}$? That is, what are $x_{1}\bp{t_{r}}$ and $x_{2}\bp{t_{r}}$? Since $x_{1}$ is the state variable, it cannot respond to the news, and $x_{1}\bp{t_{r}} =x_{1}^{*}$. For the system to
-converge to the new steady state, it must arrive at the steady-state level $x_{1}^{* *}$ of the state variable along the new saddle path. So $x_{2}\bp{t_{r}} $ must be on the new saddle path at $x_{1}^{*}$, and over time both $x_{1}(t) $ and $x_{2}(t) $ move along the saddle path until they converge to the new steady state. To sum up, the system jumps from $\bp{x_{1}^{*},x_{2}^{*}}$ to $\bp{x_{1}^{*},x_{2}\bp{t_{r}}} $, and then moves along the saddle path until it reaches $\bp{x_{1}^{* *},x_{2}^{* *}}$.
 
-The response to the news in the phase diagram is represented at the end of the lecture notes.
+\begin{figure}[p]
+\subcaptionbox{Initial phase diagram \label{f:news1}}{\includegraphics[scale=\sfig,page=5]{\pdf}}\hfill
+\subcaptionbox{New phase diagram \label{f:news2}}{\includegraphics[scale=\sfig,page=6]{\pdf}}\vfig
+\subcaptionbox{Jump upon news \label{f:news3}}{\includegraphics[scale=\sfig,page=7]{\pdf}}\hfill
+\subcaptionbox{Movement after the jump \label{f:news4}}{\includegraphics[scale=\sfig,page=8]{\pdf}}
+\caption{Response to a shock in a phase diagram with a state variable}
+\label{f:news}\end{figure}
+
+
+\subsection{Using Phase Diagram with State Variable and Control Variable}
+
+Suppose $x$ is a state variable: information revealed at $t$ does not influence its value at $t$. Suppose $y$ is a control variable: information revealed at $t$ may influence its value at $t$. Suppose that we are in the steady state $\bp{x^{*},y^{*}}$ of the previous phase diagram. 
+
+Assume that there is an exogenous, unanticipated increase in $\k_{2}$. This increase is revelation of news because it is an unanticipated change to one of the parameters or variables of the system. The response to the news in the phase diagram is represented in figure~\ref{f:news}.
+
+As $\k_{2}$ increases, the $\dot{y}=0$ locus shifts down, so the new steady state $\bp{x^{* *},y^{* *}} $ is to the south-east of the previous steady state: $x^{* *}>x^{*}$ and $y^{* *}<y^{*}.$ There is also a new saddle path passing through this new steady state.
+
+Where do we start after the news is revealed at $t=t_{r}$? That is, what are $x\bp{t_{r}}$ and $y\bp{t_{r}}$? Since $x$ is the state variable, it cannot respond to the news, and $x\bp{t_{r}} =x^{*}$. For the system to converge to the new steady state, it must arrive at the steady-state level $x^{* *}$ of the state variable along the new saddle path. So $y\bp{t_{r}} $ must be on the new saddle path at $x^{*}$, and over time both $x(t) $ and $y(t) $ move along the saddle path until they converge to the new steady state. To sum up, the system jumps from $\bp{x^{*},y^{*}}$ to $\bp{x^{*},y\bp{t_{r}}} $, and then moves along the saddle path until it reaches $\bp{x^{* *},y^{* *}}$.
+
 
 \section{Nonlinear Systems of First-Order Differential Equations}
 
@@ -396,13 +417,20 @@ f\bp{0}=0,\; f'>0,\;f''<0,\;\lim_{k\to +\infty}f'(k)=0,\;\lim_{k\to 0}f'(k) =+\i
 \end{align*}
 It is difficult to solve this system explicitly. But without solving it explicitly, we can characterize its properties by constructing its phase diagram. This is what we do in this section.
 
-\subsection{Construction of the Phase Diagram}
+We draw the phase diagram in a plane with the state variable $k$ on the x-axis and the control variable $c$ on the y-axis (figure~\ref{f:growth}).
 
-We draw the phase diagram in a plane with the state variable $k$ on the x-axis and the control variable $c$ on the y-axis. We proceed as follows:
 
-\begin{itemize}
+\begin{figure}[p]
+\subcaptionbox{Nullclines \label{f:growth1}}{\includegraphics[scale=\sfig,page=9]{\pdf}}\hfill
+\subcaptionbox{Steady state \label{f:growth2}}{\includegraphics[scale=\sfig,page=10]{\pdf}}\vfig
+\subcaptionbox{Directional arrows \label{f:growth3}}{\includegraphics[scale=\sfig,page=11]{\pdf}}\hfill
+\subcaptionbox{Trajectories\label{f:growth4}}{\includegraphics[scale=\sfig,page=12]{\pdf}}
+\caption{Phase diagram for a simple growth model}
+\label{f:growth}\end{figure}
 
-\item We draw the $\dot{k}=0$ curve defined by
+\subsection{Nullclines}
+
+We first draw the nullclines (figure~\ref{f:growth1}). We draw the $\dot{k}=0$ curve defined by
 \begin{align*}
 c=f\bp{k} -\d\cdot k
 \end{align*}
@@ -410,27 +438,28 @@ and the $\dot{c}=0$ curve defined by
 \begin{align*}
 f^{\prime}\bp{k} =\d +\rho.
 \end{align*}
-The $\dot{k}=0$ curve is concave and the $\dot{c}=0$ curve is a vertical line in the $(k,c)$ plane.
+In the $(k,c)$ plane, the $\dot{k}=0$ curve is concave and the $\dot{c}=0$ curve is a vertical line .
 
-\item The intersection of these two loci is the steady state $(k^{*},c^{*})$ of the system.
+\subsection{Steady State}
 
-\item To determine the directions of the streamlines, we partially differentiate equations~\eqref{eq:growth1} and~\eqref{eq:growth2}: 
+The intersection of these two loci is the steady state $(k^{*},c^{*})$ of the system (figure~\ref{f:growth2}).
+
+\subsection{Directional Arrows}
+
+Next we construct the directional arrows (figure~\ref{f:growth3}). To do that, we partially differentiate equations~\eqref{eq:growth1} and~\eqref{eq:growth2}: 
 \begin{align*}
 \pd{\dot{k}}{c} &=-1<0 \\
 \pd{\dot{c}}{k} &=c\cdot f''(k)<0.
 \end{align*}
 Therefore as $c$ increases, $\dot{k}$ decreases. So, the horizontal arrows point eastward below the $\dot{k}=0$ curve and westward above it. Similarly as $k$ increases, $\dot{c}$ decreases. So the vertical arrows point northward to the left of the $\dot{c}=0$ curve and southward to the right of it.
 
-\item The streamlines drawn yield a saddle-point equilibrium at the steady state $(k^{*},c^{*})$. The only way for the economy to converge to the steady state is on the saddle path leading to it. This means that given any initial capital $k_{0}$, initial consumption $c_{0}$ is such that the pair $\bp{k_{0},c_{0}} $
-lies on the saddle path.
+\subsection{Trajectories}
 
-\end{itemize}
-
-The phase diagram is represented at the end of the lecture notes.
+The directional arrows drawn describe a saddle around the steady state (figure~\ref{f:growth4}). The only way for the economy to converge to the steady state is on the saddle path leading to it. This means that given any initial capital $k_{0}$, initial consumption $c_{0}$ is such that the pair $\bp{k_{0},c_{0}} $ lies on the saddle path.
 
 \subsection{Linearization}
 
-The streamlines suggest that we are in a saddle-point equilibrium. We can check the validity of the conclusion by linearizing the nonlinear system~\eqref{eq:growth1}--\eqref{eq:growth2} using a first-order Taylor expansion around the steady state:
+The phase diagram indicates that the system is a saddle around the steady state (figure~\ref{f:growth}). We can also obtain this result by linearizing the nonlinear system~\eqref{eq:growth1}--\eqref{eq:growth2} using a first-order Taylor expansion around the steady state:
 \begin{align*}
 \dot{k} &=\dot{k}^{*} +\bp{k-k^{*}} \cdot \pd{\dot{k}}{k}+\bp{c-c^{*}}\cdot \pd{\dot{k}}{c} \\
 \dot{c} &=\dot{c}^{*} +\bp{k-k^{*}}\cdot  \pd{\dot{c}}{k}+\bp{c-c^{*}}\cdot \pd{\dot{c}}{c}.
@@ -458,7 +487,9 @@ This system is a two-variable nonhomogenous system of FODEs
 for \[\bm{x}=\bs{\begin{array}{l}
 k\\ 
 c
-\end{array}}.\] But it is a two-variable homogenous system for the transformed variable $\bm{y}$, where
+\end{array}}.\]
+
+But it is a two-variable homogenous system for the transformed variable $\bm{y}$, where
 \begin{equation*}
 \bm{y}=\bm{x}-\bm{x}^{*}=\bs{
 \begin{array}{l}
@@ -466,8 +497,7 @@ k-k^{*}\\
 c-c^{*}
 \end{array}}.
 \end{equation*}
-The constant matrix $A$ of Section~\ref{sec:two} is  $\bm{J}^{*}$. The analysis of Section~\ref{sec:two} shows that
-the properties of the steady state depend on the eigenvalues of $\bm{J}^{*}$. The four partial derivatives are
+The constant matrix $A$ of Section~\ref{sec:two} is $\bm{J}^{*}$. The analysis of Section~\ref{sec:two} shows that the properties of the steady state depend on the eigenvalues of $\bm{J}^{*}$. The four partial derivatives are
 \begin{align*}
 \pdw{\dot{k}}{k}{(k^{*},c^{*})}&=f'(k^{*}) -\d =\rho >0 \\
 \pdw{\dot{k}}{c}{(k^{*},c^{*})}&=-1<0 \\
@@ -482,6 +512,6 @@ It follows that the Jacobian matrix can be written
 c\cdot f''(k) & 0
 \end{array}}
 \end{equation*}
-As shown by~\eqref{eq:DETL}, the product of the two eigenvalues is the determinant of $\bm{J}^{*}$:  \[\det(\bm{J}^{*})=c\cdot f''(k) <0.\] Therefore, the two eigenvalues have opposite sign. This property establishes that the steady state is a saddle point locally.
+As shown by~\eqref{eq:DETL}, the product of the two eigenvalues is the determinant of $\bm{J}^{*}$:  \[\det(\bm{J}^{*})=c\cdot f''(k) <0.\] Therefore, the two eigenvalues have opposite sign. This property confirms that around the steady state the system is a saddle.
 
 \end{document}
