@@ -26,6 +26,16 @@ The `pdf` folder contains all the material for the course in PDF format.
 
 The `tex` folder contains the TEX files used to create the PDF files in the `pdf` folder.
 
++ `dynamicprogramming.tex`: source for `dynamicprogramming.pdf`
++ `optimalcontrol.tex`: source for `optimalcontrol.pdf`
++ `differentialequations.tex`: source for `differentialequations.pdf`
++ `exercises.tex`: source for `exercises.pdf`
++ `exercises_solutions.tex`: source for `exercises_solutions.pdf`
++ `exam.tex`: source for `exam.pdf`
++ `exam_solutions.tex`: source for `exam_solutions.pdf`
++ `paper.sty`, `math.sty`, `notes.sty`: style files used in all the TEX files
++ `phasediagrams.key`, `phasediagrams.pdf`: files with the figures imported into the TEX files
+
 ## Useful resources
 
 No textbook is required for this short course, but the following textbooks provide useful additional material:
