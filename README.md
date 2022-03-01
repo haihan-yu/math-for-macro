@@ -46,3 +46,7 @@ No textbook is required for this short course, but the following textbooks provi
 ## Author
 
 The course material was developed by [Pascal Michaillat](https://www.pascalmichaillat.org/). It was initially developed for EC400 at the [London School of Economics](https://www.lse.ac.uk) and then revised for ECON2080 at [Brown University](https://www.brown.edu).
+
+## License
+
+The content of this repository is licensed under the terms of the Creative Commons Attribution 4.0 International License ([CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)).
