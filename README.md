@@ -2,6 +2,10 @@
 
 This repository contains material for a one-week graduate course on mathematical methods for macroeconomics.
 
+## Course Webpage
+
+The course is hosted at https://www.pascalmichaillat.org/t3.html.
+
 ## Overview
 
 These lectures cover basic mathematical methods to study dynamical systems, in discrete time and in continuous time. Dynamical systems are systems that involve more than one time-period; they are prevalent in many areas of macroeconomics. The course covers three methods:
