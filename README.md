@@ -19,8 +19,8 @@ These lectures cover basic mathematical methods to study dynamical systems, in d
 The material is organized in 3 folders:
 
 * `lectures` folder - 3 sets of lecture notes
-+ `homework` folder - 13 exercises and their solutions
-+ `exam` folder - a one-hour exam and its solutions
+* `homework` folder - 13 exercises and their solutions
+* `exam` folder - a one-hour exam and its solutions
 
 ## Lectures
 
