@@ -64,7 +64,7 @@ The `exam` folder contains the following material:
 
 ## Software
 
-The teaching material was produced on a Mac (macOS Monterey 12.2.1) with the MacTeX-2021 distribution. The LaTeX files should be compiled with pdfTeX. The graphics were produced with Keynote (version 11.2).
+The material was produced on a Mac (macOS Monterey 12.2.1) with the MacTeX-2021 distribution. The LaTeX files should be compiled with pdfTeX. The graphics were produced with Keynote (version 11.2).
 
 ## Useful resources
 
@@ -75,7 +75,7 @@ No textbook is required for this short course, but the following textbooks provi
 
 ## Author
 
-The course material was developed by [Pascal Michaillat](https://www.pascalmichaillat.org/). It was initially developed for EC400 at the [London School of Economics](https://www.lse.ac.uk) and then revised for ECON2080 at [Brown University](https://www.brown.edu).
+The course material was developed by [Pascal Michaillat](https://www.pascalmichaillat.org/) for EC400 at the [London School of Economics](https://www.lse.ac.uk).
 
 ## License
 
