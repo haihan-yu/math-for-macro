@@ -5,7 +5,6 @@ This repository contains material for a one-week graduate course on mathematical
 ## Instructor
 
 The course material was developed by [Pascal Michaillat](https://www.pascalmichaillat.org/) for EC400 at the [London School of Economics & Political Science](https://www.lse.ac.uk).
-
 ## Course Webpage
 
 The course is hosted at https://www.pascalmichaillat.org/t3.html.
