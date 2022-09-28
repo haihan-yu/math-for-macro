@@ -16,7 +16,7 @@ The course covers basic mathematical methods to study dynamical systems, in disc
 
 ## Course material
 
-The repository contains all the material for the course.
+The repository contains all the material for the course. It is organized in 3 folders:
 
 + `lectures` folder - 3 sets of lecture notes
 + `homework` folder - 3 problem sets and their solutions
@@ -42,8 +42,9 @@ The `lectures` folder contains the following material:
 + `optimalcontrol.tex` - LaTeX file producing  `optimalcontrol.pdf`
 + `differentialequations.pdf` - lecture notes on differential equations
 + `differentialequations.tex` - LaTeX file producing  `differentialequations.pdf`
-+ `phasediagrams.key` - Keynote file containing phase diagrams included in `differentialequations.tex`
-+ `phasediagrams.pdf` - PDF version of `phasediagrams.key`
++ `phasediagrams.pdf` - phase diagrams included in `differentialequations.tex`
++ `phasediagrams.key` - Keynote file producing `phasediagrams.pdf`
+
 
 ## Homework
 
