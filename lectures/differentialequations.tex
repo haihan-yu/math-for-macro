@@ -25,7 +25,7 @@ Consider the equation
 \begin{equation}
 \dot{x}(t) -\l\cdot x(t) = 0
 \label{eq:FODE1}\end{equation}
-where $\l\in\R$ is a constant. Equation~\eqref{eq:FODE1} is a first-order differential equation (FODE), because it involves $x(t)$ and the first-order derivative of $x(t)$ with respect to time: $\dot{x}(t)$.  Equation~\eqref{eq:FODE1} is a functional equation: the unknown is the function $x(t)$ rather than a number or a vector. Solving equation~\eqref{eq:FODE1} means finding the functions $x(t)$ that, together with their derivative $\dot{x}(t)$, satisfy equation~\eqref{eq:FODE1} for all $t \in \R$.
+where $\l\in\R$ is a constant. Equation~\eqref{eq:FODE1} is a first-order differential equation, because it involves $x(t)$ and the first-order derivative of $x(t)$ with respect to time: $\dot{x}(t)$.  Equation~\eqref{eq:FODE1} is a functional equation: the unknown is the function $x(t)$ rather than a number or a vector. Solving equation~\eqref{eq:FODE1} means finding the functions $x(t)$ that, together with their derivative $\dot{x}(t)$, satisfy equation~\eqref{eq:FODE1} for all $t \in \R$.
 
 Equation~\eqref{eq:FODE1} is an especially simple differential equation. It can be rewritten as 
 \[\frac{\dot{x}(t)}{x(t)}= \l,\]
@@ -57,7 +57,7 @@ Therefore, if $x(t)$ solves equation~\eqref{eq:FODE1}, it is necessarily of the 
  
 \subsection{Constant Coefficient}
 
-We have solved the simplest FODE, which takes the form of equation~\eqref{eq:FODE1}. We now study a more general FODE: 
+We have solved the simplest differential equation, which takes the form of equation~\eqref{eq:FODE1}. We now study a more general differential equation: 
 \begin{equation}
 \dot{x}(t)-\l \cdot x(t) =f(t),\label{eq:FODE2}
 \end{equation}
@@ -73,7 +73,7 @@ for any date $t_{0}\in \R$.
 
 It is clear that functions of the type~\eqref{eq:FODE2sol} satisfy equation~\eqref{eq:FODE2}. We now show that if a function $x(t)$ solves equation~\eqref{eq:FODE2}, it is necessarily of the type~\eqref{eq:FODE2sol}.
 
-To be able to solve the FODE, we manipulate a certain function $x(t)\cdot \mu(t)$ instead of manipulating $x(t)$ directly. The auxiliary function $\mu(t) $ is called the \textit{integrating factor}. The integrating factor for this problem is 
+To be able to solve the differential equation, we manipulate a certain function $x(t)\cdot \mu(t)$ instead of manipulating $x(t)$ directly. The auxiliary function $\mu(t) $ is called the \textit{integrating factor}. The integrating factor for this problem is 
 \[\mu(t) =e^{-\l \cdot t}.\]
 This integrating factor $\mu(t)$ has the desirable property that $\dot{\mu}(t) =-\l \cdot \mu(t)$.
 
@@ -144,15 +144,15 @@ x(t) =x_{0}\cdot \exp{\int_{t_{0}}^{t}\l(s)ds}+\int_{t_{0}}^{t}f(z)\cdot \exp{\i
 
 \section{Linear Systems of First-Order Differential Equations}\label{sec:two}
 
-We often encounter dynamic systems with several variables that move together over time. For example in the consumption-saving problem that we solved with optimal control methods, in the case of CRRA utility, the solution is characterized by two FODEs:
+We often encounter dynamic systems with several variables that move together over time. For example in the consumption-saving problem that we solved with optimal control methods, in the case of CRRA utility, the solution is characterized by two first-order differential equations:
 \begin{align*}
 \dot{a}(t) &=r\cdot a(t)-c(t), \\
 \dot{c}(t) &=\frac{r-\rho}{\g}\cdot  c(t).
 \end{align*}
-The first FODE is the asset accumulation equation and the second FODE is the Euler equation that characterizes optimal consumption over time. To solve explicitly for the optimal consumption path, we need to solve the two FODEs
-simultaneously. This section presents a method to solve systems of FODEs.
+The first differential equation is the asset accumulation equation and the second differential equation is the Euler equation that characterizes optimal consumption over time. To solve explicitly for the optimal consumption path, we need to solve the two differential equations
+simultaneously. This section presents a method to solve systems of differential equations.
 
-We consider a system of $n$ FODEs with constant coefficients:
+We consider a linear system of $n$ first-order differential equations with constant coefficients:
 \begin{align*}
 \dot{x}_{1}(t) &=A_{11}\cdot x_{1}(t)+A_{12}\cdot x_{2}(t)+\ldots+A_{1n}\cdot x_{n}(t) +f_{1}(t) \\
 \dot{x}_{2}(t) &=A_{21}\cdot x_{1}(t)+A_{22}\cdot x_{2}(t)+\ldots+A_{2n}\cdot x_{n}(t) +f_{2}(t) \\
@@ -167,10 +167,10 @@ An alternative way of expressing the system is to write it in matrix form:
 \begin{equation}
 \bm{\dot{x}}(t) =\bm{A}  \bm{x}(t) +\bm{f}(t), \label{eq:FODEsys}
 \end{equation}
-where $\bm{\dot{x}}(t) \in \R^{n}$, $\bm{x}(t) \in \R^{n}$, and $\bm{f}(t) \in \R^{n}$ are column vectors with $n$ elements. $\bm{A}\in \R^{n\times n}$ is a constant $n\times n$ matrix. The system of FODEs is linear because it can be written in matrix form: it involves a linear relationship between the vector $\bm{\dot{x}}(t)$ and the vector $\bm{x}(t)$.
+where $\bm{\dot{x}}(t) \in \R^{n}$, $\bm{x}(t) \in \R^{n}$, and $\bm{f}(t) \in \R^{n}$ are column vectors with $n$ elements. $\bm{A}\in \R^{n\times n}$ is a constant $n\times n$ matrix. The system of first-order differential equations is linear because it can be written in matrix form: it involves a linear relationship between the vector $\bm{\dot{x}}(t)$ and the vector $\bm{x}(t)$.
 
-If $\bm{A}$ is diagonal ($A_{ij}=0$ for all $i\neq j$), the system would reduce to a collection of $n$ FODEs---one FODE for each  $x_{i}(t)$---that can be solved independently using the techniques from Section~\ref{sec:one}.
-If $\bm{A}$ is not diagonal, the different entries in $\bm{x}(t)$ interact and we must solve the system of FODEs simultaneously.
+If $\bm{A}$ is diagonal ($A_{ij}=0$ for all $i\neq j$), the system would reduce to a collection of $n$ first-order differential equations---one first-order differential equation for each  $x_{i}(t)$---that can be solved independently using the techniques from Section~\ref{sec:one}.
+If $\bm{A}$ is not diagonal, the different entries in $\bm{x}(t)$ interact and we must solve the system of first-order differential equations simultaneously.
 
 \subsection{General Solution}
 
@@ -201,7 +201,7 @@ where we define
 \bm{y}(t) &\equiv \bm{V}^{-1}\bm{x}(t)\\
 \bm{g}(t) &\equiv \bm{V}^{-1}\bm{f}(t).
 \end{align*}
-Since the matrix $\bm{\Lambda}$ is diagonal, the system is reduced to a collection of $n$ independent FODEs---one for each $y_{i}(t)$. Once we have solved for $\bm{y}(t)$, we can recover $\bm{x}(t)$ by 
+Since the matrix $\bm{\Lambda}$ is diagonal, the system is reduced to a collection of $n$ independent first-order differential equations---one for each $y_{i}(t)$. Once we have solved for $\bm{y}(t)$, we can recover $\bm{x}(t)$ by 
 \begin{equation*}
 \bm{x}(t) =\bm{V} \bm{y}(t) .
 \end{equation*}
@@ -219,11 +219,11 @@ So the transformed system~\eqref{eq:FODEsyst} becomes
 \begin{equation*}
 \bm{\dot{y}}(t) =\bm{\Lambda}\bm{y}(t) ,
 \end{equation*}
-which leads to $n$ independent FODEs:
+which leads to $n$ independent differential equations:
 \begin{equation*}
 \dot{y}_{i}(t) -\l_{i} \cdot y_{i}(t)=0
 \end{equation*}
-for $i=1,\ldots,n$. In other words, each $y_{i}(t) $ is growing at constant rate $\l_{i}$. The analysis of Section~\ref{sec:one} shows that the solution to the $i^{th}$ FODE is 
+for $i=1,\ldots,n$. In other words, each $y_{i}(t) $ is growing at constant rate $\l_{i}$. The analysis of Section~\ref{sec:one} shows that the solution to the $i^{th}$ differential equation is 
 \begin{equation*}
 y_{i}(t) =A_{i}\cdot e^{\l_{i}\cdot t}
 \end{equation*}
@@ -305,7 +305,7 @@ x_{2}(t) &=A_{1}\cdot \b_{1}\cdot e^{\l_{1}\cdot t}+A_{2}\cdot \b_{2}\cdot e^{\l
 \end{align*}
 where $A_{1}$ and $A_{2}$ are arbitrary constants. 
 
-Note that in the case in which $\l_{1}=\l_{2}=\l$, the system $\bs{x_{1}(t),x_{2}(t)}$ above is still the general solution of the system of FODEs as long as the two eigenvectors $\bs{\a_{1},\b_{1}}$ and $\bs{\a_{2},\b_{2}}$ are linearly independent.
+Note that in the case in which $\l_{1}=\l_{2}=\l$, the system $\bs{x_{1}(t),x_{2}(t)}$ above is still the general solution of the system of differential equations as long as the two eigenvectors $\bs{\a_{1},\b_{1}}$ and $\bs{\a_{2},\b_{2}}$ are linearly independent.
 
 Also note that any nonhomogenous system with constant terms $\bs{\k_{1},\k_{2}}$:
 \begin{align*}
@@ -327,9 +327,9 @@ Now that we have found a closed-form solution to the system, we can analyze its 
 
 \section{Phase Diagrams}\label{sec:three}
 
-Without solving for eigenvalues and eigenvectors explicitly, we can study the properties of a linear system of FODEs by drawing its phase diagram. 
+Without solving for eigenvalues and eigenvectors explicitly, we can study the properties of a linear system of first-order differential equations by drawing its phase diagram. 
 
-Here we construct the phase diagram for the following linear nonhomogenous system of two FODEs:
+Here we construct the phase diagram for the following linear nonhomogenous system of two first-order differential equations:
 \begin{align}
 \dot{x}(t) &=a\cdot x(t)+b\cdot y(t)+\k_{1}\label{eq:nonh1}\\
 \dot{y}(t) &=c\cdot x(t)+d\cdot y(t)+\k_{2}\label{eq:nonh2}
@@ -405,7 +405,7 @@ Where do we start after the news is revealed at $t=t_{r}$? That is, what are $x\
 
 \section{Nonlinear Systems of First-Order Differential Equations}
 
-Unlike the systems of FODEs studied in sections~\ref{sec:two} and~\ref{sec:three}, which were linear, systems of FODEs in macroeconomics are often nonlinear. For example the typical growth model is characterized by the following nonlinear system of FODEs:
+Unlike the systems of first-order differential equations studied in sections~\ref{sec:two} and~\ref{sec:three}, which were linear, systems of first-order differential equations in macroeconomics are often nonlinear. For example the typical growth model is characterized by the following nonlinear system of first-order differential equations:
 \begin{align}
 \dot{k}(t) &=f\bp{k(t)} -c(t)-\d \cdot k(t),  \label{eq:growth1} \\
 \dot{c}(t) &=\bs{f'\bp{k(t)} -\bp{\d+\rho}}\cdot c(t), \label{eq:growth2}
@@ -483,7 +483,7 @@ where $\bm{J}^{*}$ is the Jacobian matrix evaluated at the steady state:
 \pdw{\dot{c}}{k}{(k^{*},c^{*})} & \pdw{\dot{c}}{c}{(k^{*},c^{*})}
 \end{array}}.
 \end{equation*}
-This system is a two-variable nonhomogenous system of FODEs
+This system is a two-variable nonhomogenous system of first-order differential equations
 for \[\bm{x}=\bs{\begin{array}{l}
 k\\ 
 c

@@ -1,0 +1,173 @@
+\documentclass[letterpaper,12pt,leqno]{article}
+\usepackage{paper,math,notes}
+\available{https://www.pascalmichaillat.org/t3.html}
+\hypersetup{pdftitle={Problem Set on Dynamic Programming: Solutions}}
+
+\begin{document}
+
+\title{Problem Set on Dynamic Programming: Solutions}
+\author{Pascal Michaillat}
+\date{}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\section*{Solution to Problem 1.}
+
+\begin{enumerate}
+\item See lecture notes.
+\item At the beginning of period $t$, one can choose $c_{t}$ but not $k_{t}$. So the control variable is $c_{t}$ and the state variable is $k_{t}$. But given $k_{t}$, $c_{t}$ and $k_{t+1}$ are tied via the resource constraint. We saw in lecture that choosing $k_{t+1}$ simplifies the application of the Benveniste-Scheinkman equation. So we use $k_{t+1}$ instead of $c_{t}$ as a control variable.  Below, $k$ denotes capital in the current period (state variable) and $k'$ denotes capital in the next period (control variable).
+\item The Bellman equation is 
+\begin{align*}
+V\bp{k} =\max[k']{\ln{A\cdot k^{\a}-k'} +\b\cdot V(k')}.
+\end{align*}
+\item The first-order condition with respect to $k'$ in the Bellman equation is
+\begin{align}
+\frac{1}{c} =\b \cdot \od{V}{k}\bp{k'}\label{eq:EQ1}
+\end{align}
+and the Benveniste-Scheinkman equation is
+\begin{align*}
+\od{V}{k}\bp{k} =\a\cdot  A\cdot k^{\a -1}\cdot \frac{1}{c} 
+\end{align*}
+and by combining both equations we obtain the Euler equation
+\begin{align*}
+c' =\a \cdot \b \cdot A\cdot \bp{k'}^{\a -1}\cdot c .
+\end{align*}
+
+\item Start with $V_{0}\bp{k} =0$. Plug $V_{0}(k)$ into the Bellman equation to calculate the value function
+\begin{align*}
+V_{1}\bp{k}& =\max[k']{\ln{A\cdot k^{\a}-k'} +\b\cdot  V_{0}(k')}\\
+V_{1}\bp{k} &=\max[k']{\ln{A\cdot k^{\a}-k'}}.
+\end{align*}
+The policy function is $k'=0$, which implies that $c=A\cdot k^{\a}$. Therefore, the value function after the first iteration is
+\begin{align*}
+V_{1}\bp{k} =\ln{A\cdot k^{\a}}
+\end{align*}
+Now substitute the value function $V_{1}\bp{k} $ into the Bellman equation and calculate the value function
+\begin{align*}
+V_{2}\bp{k} &=\max[k']{\ln{A\cdot k^{\a}-k'} +\b \cdot V_{1}\bp{k'}}\\
+V_{2}\bp{k} &=\max[k']{\ln{A\cdot k^{\a}-k'} +\b \cdot \ln{A\cdot (k')^{\a}}}.
+\end{align*}
+The first-order condition  with respect to $k'$ is 
+\begin{align*}
+\frac{-1}{A \cdot k^{\a}-k'}+\frac{\a \cdot \b}{k'}=0.
+\end{align*}
+Thus, the policy function is
+\begin{align*}
+k'=\frac{\a\cdot \b}{1+\a  \cdot \b} \cdot A \cdot k^{\a}
+\end{align*}
+which also implies that 
+\begin{align*}
+c= \frac{1}{1+\a\cdot \b}\cdot A\cdot k^{\a}.
+\end{align*}
+Therefore, the value function after the second iteration is
+\begin{align*}
+V_{2}\bp{k} &=\ln{\frac{1}{1+\a \cdot\b}\cdot A\cdot k^{\a}} +\b \ln{A\cdot \bp{\frac{\a \cdot \b}{1+\a\cdot  \b}\cdot A\cdot k^{\a}} ^{\a}}.
+\end{align*}
+It is convenient to write 
+\begin{align*}
+V_{2}\bp{k} &=\kappa_{2}+\bp{1+\a\cdot  \b}\cdot  \ln{k^{\a}}
+\end{align*}
+where $\kappa_{2}$ is a constant.
+\item Using~\eqref{eq:EQ1}, we infer that the policy function satisfies
+\[k'\bp{k} =\a\cdot \b\cdot  A\cdot k^{\a}\]
+and equivalently
+\[c\bp{k} =\bp{1-\a\cdot \b}\cdot  A\cdot k^{\a}.\]
+
+\item Dynamic programming sometimes allows us to find closed-form solution to optimization problems, which the Lagrangian method would not allow us to do. Even if it does not allow us to find closed-form solutions, dynamic programming sometimes allows us to find some theoretical properties of the solution. Last, dynamic programs can be (sometimes easily) solved with numerical methods.
+\end{enumerate}
+
+\section*{Solution to Problem 2.}
+
+\begin{enumerate}
+\item The state variable are the amount of shares $s_{t}$ and the dividend $d_{t}$.  The
+control variables is consumption $c_{t}$. Since $c_{t}$ and $s_{t+1}$ are linked through the budget, we can also choose $s_{t+1}$ as control variable. As usual, we pick $s_{t+1}$ as control variable to simplify derivations.
+\item The Bellman equation is 
+\begin{align*}
+V(s,d) = \max[s']{u\bp{\bp{p+d}\cdot s-p\cdot s'} +\b \cdot\E{V\bp{s',d'} \mid d}}
+\end{align*}
+\item The first-order condition with respect to $s'$ in the Bellman equation is
+\begin{align*}
+-p\cdot \od{u}{c}\bp{c} +\b \cdot \E{\pd{V\bp{s',d'}}{s'} \mid d} =0.
+\end{align*}
+The Benveniste-Scheinkman equation is
+\begin{align*}
+\pd{V(s,d)}{s} =\bp{p+d} \cdot \od{u}{c}\bp{c}.
+\end{align*}
+Combining both equations we obtain the following Euler equation:
+\begin{align*}
+p\cdot \od{u}{c}\bp{c} =\b \cdot \E{\bp{d'+p'}\cdot  \od{u}{c}\bp{c'} \mid d} .
+\end{align*}
+
+\item With $u\bp{c} =c$, $du/dc=1$ and the Euler equation becomes 
+\begin{align*}
+p=\b \cdot \E{\bp{d'+p'} \mid d} .
+\end{align*}
+Let $p_{h}$ be the price when today's dividend is high, and let $p_{l}$ be the price when today's dividend is low.
+\begin{align*}
+p_{h} &=\b \cdot \bs{\rho\cdot  \bp{d_{h}+p_{h}} +\bp{1-\rho}\cdot \bp{d_{l}+p_{l}}} \\
+p_{l} &=\b \cdot \bs{\rho \cdot \bp{d_{l}+p_{l}} +\bp{1-\rho}\cdot \bp{d_{h}+p_{h}}}
+\end{align*}
+which implies
+\begin{align*}
+p_{h}-p_{l}=\b\cdot \frac{2\cdot \rho -1 }{1-\bs{\b \cdot \bp{2\cdot \rho -1}}}\cdot \bp{d_{h}-d_{l}}>0
+\end{align*}
+because $0.5<\rho<1$. So the price is higher when the dividend is higher.
+\end{enumerate}
+
+\section*{Solution to Problem 3.}
+
+\begin{enumerate}
+\item $k$ is the state variable and $\bp{k',l} $ are the control variables.
+\item The Bellman equation is 
+\begin{align*}
+V\bp{k} =\underset{k',l}{\max}\bc{u\bs{f\bp{k,l} -k',l} +\b\cdot  V(k')}
+\end{align*}
+\item The first-order conditions with respect to $k'$ and $l$ in the Bellman equation are
+\begin{align*}
+-\pd{u}{c}(c,l)+\b \cdot \od{V}{k}\bp{k'}& =0 \\
+\pd{u}{c}(c,l)\cdot \pd{f}{l}(k,l)+\pd{u}{l}(c,l)&=0 .
+\end{align*}
+The Benveniste-Scheinkman equation is
+\begin{align*}
+\od{V}{k}\bp{k} =\pd{u}{c}(c,l)\cdot \pd{f}{k}(k,l)
+\end{align*}
+We combine these equations to get
+\begin{align}
+\pd{u}{c}(c,l) &=\b \cdot \pd{u}{c}\bp{c',l'} \cdot \pd{f}{ k}\bp{k',l'}\label{ee} \\
+\pd{u}{c}\bp{c,l}\cdot \pd{f}{l}\bp{k,l}&=-\pd{u}{l}\bp{c,l}.
+\end{align}
+
+\item In steady state, we have $l=l^{*}$, $c=c^{*}$, and $k=k^{*}$. Using \eqref{ee} and the functional form of $f$, we obtain
+\begin{align*}
+\a \cdot \b\cdot  \bp{\frac{k^{*}}{l^{*}}}^{\a-1}&=1\\
+\frac{k^{*}}{l^{*}}=\bp{\a\cdot  \b}^{1/\bp{1-\a}}.
+\end{align*}
+Then use the law of motion of capital implies 
+\begin{align*}
+\frac{c^{*}}{k^{*}}=\bp{\frac{k^{*}}{l^{*}}}^{\a-1}-1=\frac{1}{\a \cdot \b}-1.
+\end{align*}
+
+\item The Bellman equation is 
+\begin{align*}
+V\bp{A,k} =\max_{k',l}\bc{u\bs{A\cdot f\bp{k,l}-k',l} +\b \cdot \E{ V\bp{A',k'}\mid A}}
+\end{align*}
+where $\bp{A,k} $ are the state variables and $\bp{k',l} $ are the control variables.
+
+\item The first-order conditions with respect to $k'$ and $l$ become
+\begin{align*}
+-\pd{u}{c}(c,l)+\b \cdot \E{\pd{V}{k'}\bp{A',k'}\mid A} &=0 \\
+A\cdot \pd{u}{c}(c,l)\cdot \pd{f}{l}(k,l)+\pd{u}{l}(c,l)&=0.
+\end{align*}
+The Benveniste-Scheinkman equation becomes
+\begin{align*}
+\pd{V}{k}\bp{A,k}=A\cdot \pd{u}{c}(c,l)\cdot \pd{f}{k}(k,l).
+\end{align*}
+The Euler condition is
+\begin{align*}
+\pd{u}{c}(c,l)=\b \cdot \E{A'\cdot \pd{u}{c}(c',l')\cdot \pd{f}{k}(k',l')\mid A}.
+\end{align*}
+\end{enumerate}
+
+\end{document}

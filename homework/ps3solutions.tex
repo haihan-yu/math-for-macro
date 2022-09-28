@@ -1,0 +1,271 @@
+\documentclass[letterpaper,12pt,leqno]{article}
+\usepackage{paper,math,notes}
+\available{https://www.pascalmichaillat.org/t3.html}
+\hypersetup{pdftitle={Problem Set on Differential Equations: Solutions}}
+
+\begin{document}
+
+\title{Problem Set on Differential Equations: Solutions}
+\author{Pascal Michaillat}
+\date{}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\section*{Solution to Problem 1.}
+
+We multiply both sides of the differential equation by the integrating factor $\mu (t)=e^{-r\cdot t}$. We obtain
+\begin{align*}
+\dot{a}(t)\cdot e^{-r\cdot t}-r\cdot a(t) \cdot e^{-r\cdot t}&=s\cdot e^{-r\cdot t}\\
+\od{\bs{a(t)\cdot e^{-r\cdot t}}}{t}&=s\cdot e^{-r\cdot t}
+\end{align*}
+Integrating from time $0$ to $t$, 
+\begin{align*}
+\int_{0}^{t}d\bs{a(t)\cdot e^{-r\cdot t}}&=\int_{0}^{t} s\cdot e^{-r\cdot t} dt\\
+a(t)\cdot e^{-r\cdot t}-a(0)&=-\frac{s}{r}\cdot e^{-r\cdot t}+\frac{s}{r}.
+\end{align*}
+Therefore, as $a(0)=a_{0}$, the solution to the initial value problem must satisfy 
+\begin{align*}
+a(t)=a_{0}\cdot e^{r\cdot t}+\frac{s}{r}\bp{e^{r\cdot t}-1}.
+\end{align*}
+
+\section*{Solution to Problem 2.}
+
+The integrating factor is now
+\begin{align*}
+\mu (t)=\exp \bp{-\int_{0}^{t}r(w) dw} .
+\end{align*}
+Notice that the derivative of the integrating factor satisfies
+\begin{align*}
+\dot{\mu} (t)=-r(t)\cdot \mu(t)
+\end{align*}
+(which is why we picked this specific integrating factor). We multiply both sides of the differential equation by the integrating factor. The differential equation becomes
+\begin{align*}
+\dot{a}(t)\cdot \mu (t)- a(t)\cdot r(t)\cdot \mu (t)&=s(t)\cdot \mu (t)\\
+\dot{a}(t)\cdot \mu (t)- a(t)\cdot  \dot{\mu} (t)&=s(t)\cdot \mu (t)\\
+\od{\bs{a(t)\cdot \mu (t)}}{t}&=s(t)\cdot \mu (t).
+\end{align*}
+Integrating from time $0$ to $t$, 
+\begin{align*}
+a(t)\cdot \mu (t)-a(0)\cdot \mu(0)&=\int_{0}^{t}s(z) \cdot \mu (z) dz\\
+a(t)&=\frac{a_{0}}{\mu (t)}+\int_{0}^{t}s(z) \cdot \frac{\mu (z)}{\mu (t)} dz\\
+a(t)&=a_{0}\cdot \exp \bp{\int_{0}^{t}r(z) dz}+\int_{0}^{t}s(z) \cdot  \exp \bp{\int_{z}^{t}r(w) dw} dz.
+\end{align*}
+This equation reduces to the solution of Problem 6 when both $r$ and $s$ are constant. 
+
+\section*{Solution to Problem 3.}
+\begin{enumerate}
+\item We are facing a linear, two-variable, homogenous system of first-order differential equations. To find the general solution of the system, we need the eigenvalues and eigenvectors of the matrix 
+\begin{align*}
+\bm{A}=\bs{
+\begin{array}{ll}
+1 & 1 \\ 
+4 & 1 
+\end{array}}.
+\end{align*}
+
+First, we determine the eigenvalues. The eigenvalues $\l$ are the roots of the polynomial $\det(\bm{A}-\l\cdot \bm{I})$. So the eigenvalues $\l$ solve
+ \begin{align*}
+\det\bs{\begin{array}{ll}
+1-\lambda & 1 \\ 
+4 & 1-\lambda 
+\end{array}} =0
+\end{align*}
+Hence, the eigenvalues $\l$ are solutions to
+\begin{align*}
+\bp{1-\lambda} ^{2}-4=0
+\end{align*}
+So there are two distinct eigenvalues: $\l_{1}=$ $3$ and $\l_{2}=-1$.
+
+Second, we determine the eigenvectors. The eigenvector $[\a,\b]$ associated with the eigenvalue $\l$ solves
+\begin{align*}
+\bs{
+\begin{array}{ll}
+1-\lambda & 1 \\ 
+4 & 1-\lambda 
+\end{array}
+} \bs{
+\begin{array}{l}
+\a \\ 
+\b 
+\end{array}} =\bs{
+\begin{array}{l}
+0\\ 
+0
+\end{array}}
+\end{align*}
+To determine the eigenvector associated with $\lambda_{1}=3$, we solve 
+\begin{align*}
+\bs{\begin{array}{ll}
+-2& 1\\ 
+4 & -2
+\end{array}
+} \bs{
+\begin{array}{l}
+\a \\ 
+\b
+\end{array}} =\bs{
+\begin{array}{l}
+0\\ 
+0
+\end{array}}
+\end{align*}
+which reduces to the single equation
+\begin{align*}
+-2\cdot \a +\b =0
+\end{align*}
+thus $\b =2\cdot \a $, and the eigenvector corresponding to $\l_{1}=3$ is 
+\begin{align*}
+\bm{z}_{1}=\bs{
+\begin{array}{l}
+1 \\ 
+2
+\end{array}} .
+\end{align*}
+Similarly, the eigenvector corresponding to $\l_{2}=-1$ is 
+\begin{align*}
+\bm{z}_{2}=\bs{
+\begin{array}{l}
+1 \\ 
+-2
+\end{array}}.
+\end{align*}
+Using the eigenvalues and eigenvectors that we have determined, we conclude that the general solution of the system is 
+\begin{align*}
+\bm{x}(t)=c_{1}\cdot \bs{
+\begin{array}{l}
+1 \\ 
+2
+\end{array}} \cdot e^{3\cdot t}+c_{2}\cdot \bs{
+\begin{array}{l}
+1 \\ 
+-2
+\end{array}}\cdot e^{-t},
+\end{align*}
+where $c_{1}$ and $c_{2}$ are arbitrary constants. 
+
+\item To determine a specific solution, we would need two boundary conditions that would allow us to determine the two constants $c_{1}$ and $c_{2}$.
+\item Since the linear, two-variable, homogenous system has two eigenvalues of opposite sign, the trajectories of the system have the origin as a saddle point. See the treatment of the two-variable linear system with two eigenvalues of opposite sign in the lecture notes.
+\end{enumerate}
+
+\section*{Solution to Problem 4.}
+
+\begin{enumerate}
+\item $f(k)=k^{\a}$ with $\a\in(0,1)$ satisfies the Inada conditions.
+\item Steady-state capital $k^*$ is implicitly determined by
+\begin{align*}
+s\cdot f\bp{k^*} =\d \cdot k^*.
+\end{align*}
+
+\item Plot $k$ on the x-axis. Draw two curves $y=s\cdot f\bp{k} $ and $y=\d\cdot k$. The $y=s\cdot f\bp{k}$ curve is the saving curve. It is increasing and concave . The $y=\d\cdot  k$ curve is the depreciation curve. It is an increasing straight line. The intersection of these two curves is the steady state. Starting
+from an initial $k_{0}$, $k(t)$ converge to $k^*$. This is because if $k(t)$ is to the left of $k^*$, $\dot{k}>0$
+so $k(t)$ increases to $k^{*}$; and if $k(t)$ is to the right of $k^*$, $\dot{k}<0$, so $k(t)$ decreases to $k^{*}$.
+\end{enumerate}
+
+\section*{Solution to Problem 5.}
+\begin{enumerate}
+\item See lecture notes.
+\item  The Jacobian matrix at the steady state is
+\begin{align*}
+\bm{J}^{*}=\bs{
+\begin{array}{ll}
+\rho  & -1 \\ 
+\a \cdot \bp{\a -1}\cdot  A\cdot k^{\a -2} & 0
+\end{array}} 
+\end{align*}
+\item To show that the steady state is a saddle point locally, we must show that the eigenvalues of the Jacobian matrix evaluated at the steady state have opposite sign. The determinant of the Jacobian matrix is  $\det \bp{\bm{J}^{*}} =\a\cdot  \bp{\a -1}\cdot A\cdot k^{\a -2}<0$. As explained in the lecture notes, the two eigenvalues have opposite sign and the steady state is a saddle point locally.
+
+\item An unanticipated decrease in $\rho $ at time $t_{0}$ means that the $\dot{c}=0$ locus shifts to the right at time $t_{0}$. The new steady state is $\bp{k^{**},c^{**}} $ with $k^{* *}>k^*$ and $c^{* *}>c^*$. There is a new saddle path for the new steady state. Given that $k$ is predetermined, it must remain at its steady-state level at $t_{0}$: $k\bp{t_{0}} =k^*$. Only consumption adjusts to bring the economy on the new saddle path. Thus at time $t_{0}$, the economy jumps to a point $\bp{k^*,c\bp{t_{0}}}$ on the new saddle path. Then it moves along the saddle path to converge to the new steady state.
+\end{enumerate}
+
+\section*{Solution to Problem 6.}
+\begin{enumerate}
+\item We plot the phase diagram in a $(k,q)$ plane. The $\dot{k}(t)=0$ locus is horizontal. The $\dot{q}(t)=0$ locus is described implicitly by
+\begin{align*}
+f''\bp{k} \cdot \pd{k}{q}=r-\frac{q-1}{\chi}.
+\end{align*}
+There is no clear sign for the slope of the $\dot{q}(t)=0$ locus. However, if we are close to the steady state,  $q$ is close to 1. So the $\dot{q}(t)=0$ locus must be downward sloping.
+\item The two differential equations show that $k(t)$ increases if we are to the right of the $\dot{k}(t)=0$ locus, and $q(t)$ increases if we are above the $\dot{q}(t)=0$ locus. Again, we have a saddle point locally.
+\end{enumerate}
+
+\section*{Solution to Problem 7.}
+
+\begin{enumerate}
+\item By definition
+\begin{align*}
+\D &k=f\bp{k} -\d\cdot  k-c \\
+\D &c=\bs{\b \cdot \bp{f'(k) +1-\d} -1}\cdot  c.
+\end{align*}
+Hence, the locus $\D k=0$ is defined by
+\begin{align*}
+c=f\bp{k} -\d\cdot  k,
+\end{align*}
+and the locus $\D c=0$ is defined by
+\begin{align*}
+f'(k) =\frac{1}{\b}-1+\d.
+\end{align*}
+The intersection of these two curves is the steady state $\bp{k^*,c^*} $. The $\D k=0$ locus is concave in the $(k,c)$ plane while the $\D c=0$ locus is a vertical line passing through $k^*$.
+
+\item Follow the same procedure as that described in the lecture notes to analyze systems of nonlinear differential equations.
+\end{enumerate}
+
+\section*{Solution to Problem 8.}
+\begin{enumerate}
+\item $c(t)$ and $l(t)$ are the control variables. $k(t)$ and $h(t)$ are the state variables.
+\item The present-value Hamiltonian is
+\begin{align*}
+\Hc(t)=e^{-\rho \cdot t}\cdot \ln{c(t)} +\l^{k}(t)\cdot \bs{y(t)-c(t)-\d\cdot  k(t)} +\l^{h}(t) B\cdot \bp{1-l(t)}\cdot  h(t),
+\end{align*}
+where $\l^{h}(t)$ and $\l^{k}(t)$ are the co-state variables associated with the law of motion of human capital $h(t)$ and physical capital $k(t)$.
+
+\item The optimality conditions are
+\begin{align*}
+\pd{\Hc(t)}{c(t)} &=0\\
+\pd{\Hc(t)}{l(t)}&=0 \\
+\pd{\Hc(t)}{k(t)} &=-\dot{\l}^{k}(t)\\
+\pd{\Hc(t)v}{h(t)}&=-\dot{\l}^{h}(t).
+\end{align*}
+These conditions simplify to
+\begin{align}
+e^{-\rho \cdot t}\cdot \frac{1}{c(t)} &=\l^{k}(t) \label{FOCc} \\
+\l^{k}(t)\cdot \b \cdot\frac{ y(t)}{l(t)} &=\l^{h}(t)\cdot B\cdot h(t)  \label{FOCu} \\
+\l^{k}(t)\cdot \bs{\a\cdot  \frac{y(t)}{k(t)}-\d} &=-\dot{\l}^{k}(t)  \label{statek}\\
+\l^{k}(t)\cdot \b \cdot\frac{ y(t)}{h(t)}+\l^{h}(t)\cdot B\cdot \bs{1-l(t)} &=-\dot{\l}^{h}(t)\label{stateh}.
+\end{align}
+\item The growth rate of $c(t)$ follows from the combination of equations~\eqref{FOCc} and~\eqref{statek}.
+
+\item The equality of equation \eqref{FOCu} holds for
+interior solution only, i.e. $0<l<1$. When $B=0$, the optimal solution is $
+l=1$.
+
+\item The dynamic equations of the equilibrium are:
+\begin{align*}
+\dot{k} &=A\cdot k^{\a}\cdot h_{0}^{\b}-c-\d \cdot k \\
+\frac{\dot{c}}{c} &=\a\cdot A\cdot k^{\a -1}\cdot h_{0}^{\b}-\bp{\d +\rho} \\
+\dot{h} &=0
+\end{align*}
+Since $h_{0}$ is simply a constant, this system has a steady state $\bp{k^*,c^*} $ where $\dot{k}=\dot{c}=0$. The steady state satisfies 
+\begin{align*}
+\a\cdot A\cdot \bp{k^*}^{\a -1}\cdot h_{0}^{\b}=\d +\rho.
+\end{align*}
+To draw the phase diagram from here, see lecture notes.
+\item To show that the steady state is a saddle point graphically, see lecture notes.
+\item The Jacobian is given by
+\begin{align*}
+\bm{J}^{*}=\bs{
+\begin{array}{lr}
+\pdw{\dot{k}}{k}{(k^{*},c^{*})}  & \pdw{\dot{k}}{c}{(k^{*},c^{*})} \\ 
+\pdw{\dot{c}}{k}{(k^{*},c^{*})} & \pdw{\dot{c}}{c}{(k^{*},c^{*})}
+\end{array}}=\bs{
+\begin{array}{lr}
+\rho  & -1 \\ 
+\bp{\a -1} \a\cdot A\cdot \bp{k^*} ^{\a-2}h_{0}^{\b} & 0
+\end{array}}
+\end{align*}
+\item It follows that the steady state is a saddle point locally because the determinant of the Jacobian matrix is negative: \[\det \bp{\bm{J}^{*}} =\bp{\a-1}\cdot  \a\cdot A\bp{k^*}^{\a-2}\cdot h_{0}^{\b}<0,\] 
+which implies that the two eigenvalues of the system have opposite sign. 
+\end{enumerate}
+
+
+\end{document}
