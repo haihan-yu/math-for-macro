@@ -1,10 +1,14 @@
 # Mathematical Methods for Macroeconomics
 
-This repository contains teaching material for a week-long graduate course on mathematical methods for macroeconomics. The material was developed by [Pascal Michaillat](https://www.pascalmichaillat.org/) for EC400 at the [London School of Economics & Political Science](https://www.lse.ac.uk).
+This repository contains teaching material for a week-long graduate course on mathematical methods for macroeconomics. 
+
+## Instructor
+
+The material was developed by [Pascal Michaillat](https://pascalmichaillat.org/) for EC400 at the [London School of Economics & Political Science](https://www.lse.ac.uk).
 
 ## Course webpage
 
-The course is hosted at https://www.pascalmichaillat.org/t3.html.
+The course is hosted at https://pascalmichaillat.org/c3/.
 
 ## Course overview
 
