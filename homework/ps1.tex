@@ -1,6 +1,6 @@
 \documentclass[letterpaper,12pt,leqno]{article}
 \usepackage{paper,math,notes}
-\available{https://www.pascalmichaillat.org/t3.html}
+\available{https://pascalmichaillat.org/c3/}
 \hypersetup{pdftitle={Problem Set on Dynamic Programming}}
 
 \begin{document}
@@ -13,7 +13,7 @@
 \maketitle
 \end{titlepage}
 
-\section*{Problem 1.}
+\section*{Problem 1}
 
 Consider the following optimal growth problem: Given initial capital $k_{0}>0$, choose consumption $\bc{c_{t}} _{t =0}^{+\infty}$ to maximize utility
 \begin{equation*}
@@ -41,7 +41,7 @@ where $\k$ is a constant. Using the Bellman equation, determine the policy funct
 \item In light of these results, for which reasons would you prefer to use the dynamic-programming approach instead of the Lagrangian approach to solve the optimal growth problem? And for which reasons would you prefer to use the Lagrangian approach instead of the dynamic-programming approach?
 \end{enumerate}
 
-\section*{Problem 2.}
+\section*{Problem 2}
 
 Consider the problem of choosing consumption $\bc{c_{t}}_{t=0}^{+\infty}$ to maximize expected utility
 \begin{equation*}
@@ -68,7 +68,7 @@ p_{t}\cdot u'\bp{c_{t}} =\b\cdot  \E{\bp{d_{t+1}+p_{t+1}} \cdot u'\bp{c_{t+1}} \
 \item Suppose that $u\bp{c} =c$. Show that the asset price is higher when the current dividend is high.
 \end{enumerate}
 
-\section*{Problem 3.}
+\section*{Problem 3}
 
 Consider the following optimal growth problem: Given initial capital $k_{0}>0$, choose consumption and labor $\bc{c_{t},l_{t}}_{t=0}^{+\infty}$ to maximize utility
 \begin{equation*}
@@ -93,11 +93,7 @@ In addition, we impose $0\leq l_{t}\leq 1$. The discount factor $\b \in \bp{0,1}
 \item Suppose that the production function $f\bp{k,l} =k^{\a}\cdot l^{1-\a}$. Determine the ratios $c/k$ and $l/k$ in steady state.
 \end{enumerate}
 
-\paragraph{Stochastic case} Now, suppose $A_{t}$ is a stochastic process that takes values $A_{1}$ and $A_{2}$ with the following probability: 
-\begin{equation*}
-\P{A_{t+1}=A_{1}\mid A_{t}=A_{1}} =\P{A_{t+1}=A_{2}\mid A_{t}=A_{2}} =\rho .
-\end{equation*}
-
+\paragraph{Stochastic case} Now, suppose $A_{t}$ is a stochastic process that takes values $A_{1}$ and $A_{2}$ with the following probability: $\P{A_{t+1}=A_{1}\mid A_{t}=A_{1}} =\P{A_{t+1}=A_{2}\mid A_{t}=A_{2}} =\rho.$
 \begin{enumerate}\setcounter{enumi}{4}
 \item Write down the Bellman equation.
 \item Derive the optimality conditions.

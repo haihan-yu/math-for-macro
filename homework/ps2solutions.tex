@@ -1,6 +1,6 @@
 \documentclass[letterpaper,12pt,leqno]{article}
 \usepackage{paper,math,notes}
-\available{https://www.pascalmichaillat.org/t3.html}
+\available{https://pascalmichaillat.org/c3/}
 \hypersetup{pdftitle={Problem Set on Optimal Control: Solutions}}
 
 \begin{document}
@@ -13,7 +13,7 @@
 \maketitle
 \end{titlepage}
 
-\section*{Solution to Problem 1.}
+\section*{Solution to Problem 1}
 
 \begin{enumerate}
 \item The present-value Hamiltonian is
@@ -48,11 +48,12 @@ c^*&=A^{1/\bp{1-\a}}\bp{\frac{\a}{\d +\rho}}^{\a /\bp{1-\a}}\cdot \bp{\frac{\d \
 \end{enumerate}
 
 
-\section*{Solution to Problem 2.}
+\section*{Solution to Problem 2}
+
 \begin{enumerate}
 \item The current-value Hamiltonian is
 \begin{align*}
-\Hc^{*}(t)=f\bp{k(t)} -i(t)-\frac{\chi}{2}\cdot \bp{\frac{i(t)^{2}}{k(t)}}+q(t)\cdot i(t), 
+\Hc^{*}(t)=f\bp{k(t)}-i(t)-\frac{\chi}{2}\cdot \bp{\frac{i(t)^{2}}{k(t)}}+q(t)\cdot i(t), 
 \end{align*}
 where $q(t)$ is the co-state variable associated with the state variable $k(t)$.
 \item There are two optimality conditions for the current-value Hamiltonian. (We omit the transversality condition.) The first optimality condition is
@@ -68,7 +69,7 @@ which implies, using the law of motion of capital, that
 The second optimality condition is
 \begin{align*}
 \pd{\Hc(t)}{k(t)} &=r\cdot q(t)-\dot{q}(t)\\
-f'(k(t)) +\frac{\chi}{2}\cdot \bs{\frac{i(t)}{k(t)}}^{2}&=r\cdot q(t)-\dot{q}(t)
+f'(k(t)) +\frac{\chi}{2}\cdot \bs{\frac{i(t)}{k(t)}}^{2}&=r\cdot q(t)-\dot{q}(t).
 \end{align*}
 The first optimality condition implies that $i(t)/k(t)=\dot{k}(t)/k(t)=(q(t)-1)/\chi$. So this optimality condition becomes
 \begin{align*}

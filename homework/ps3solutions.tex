@@ -1,6 +1,6 @@
 \documentclass[letterpaper,12pt,leqno]{article}
 \usepackage{paper,math,notes}
-\available{https://www.pascalmichaillat.org/t3.html}
+\available{https://pascalmichaillat.org/c3/}
 \hypersetup{pdftitle={Problem Set on Differential Equations: Solutions}}
 
 \begin{document}
@@ -13,7 +13,7 @@
 \maketitle
 \end{titlepage}
 
-\section*{Solution to Problem 1.}
+\section*{Solution to Problem 1}
 
 We multiply both sides of the differential equation by the integrating factor $\mu (t)=e^{-r\cdot t}$. We obtain
 \begin{align*}
@@ -30,7 +30,7 @@ Therefore, as $a(0)=a_{0}$, the solution to the initial value problem must satis
 a(t)=a_{0}\cdot e^{r\cdot t}+\frac{s}{r}\bp{e^{r\cdot t}-1}.
 \end{align*}
 
-\section*{Solution to Problem 2.}
+\section*{Solution to Problem 2}
 
 The integrating factor is now
 \begin{align*}
@@ -54,7 +54,7 @@ a(t)&=a_{0}\cdot \exp \bp{\int_{0}^{t}r(z) dz}+\int_{0}^{t}s(z) \cdot  \exp \bp{
 \end{align*}
 This equation reduces to the solution of Problem 6 when both $r$ and $s$ are constant. 
 
-\section*{Solution to Problem 3.}
+\section*{Solution to Problem 3}
 \begin{enumerate}
 \item We are facing a linear, two-variable, homogenous system of first-order differential equations. To find the general solution of the system, we need the eigenvalues and eigenvectors of the matrix 
 \begin{align*}
@@ -68,13 +68,13 @@ This equation reduces to the solution of Problem 6 when both $r$ and $s$ are con
 First, we determine the eigenvalues. The eigenvalues $\l$ are the roots of the polynomial $\det(\bm{A}-\l\cdot \bm{I})$. So the eigenvalues $\l$ solve
  \begin{align*}
 \det\bs{\begin{array}{ll}
-1-\lambda & 1 \\ 
-4 & 1-\lambda 
+1-\l & 1 \\ 
+4 & 1-\l 
 \end{array}} =0
 \end{align*}
 Hence, the eigenvalues $\l$ are solutions to
 \begin{align*}
-\bp{1-\lambda} ^{2}-4=0
+\bp{1-\l} ^{2}-4=0
 \end{align*}
 So there are two distinct eigenvalues: $\l_{1}=$ $3$ and $\l_{2}=-1$.
 
@@ -82,8 +82,8 @@ Second, we determine the eigenvectors. The eigenvector $[\a,\b]$ associated with
 \begin{align*}
 \bs{
 \begin{array}{ll}
-1-\lambda & 1 \\ 
-4 & 1-\lambda 
+1-\l & 1 \\ 
+4 & 1-\l 
 \end{array}
 } \bs{
 \begin{array}{l}
@@ -95,7 +95,7 @@ Second, we determine the eigenvectors. The eigenvector $[\a,\b]$ associated with
 0
 \end{array}}
 \end{align*}
-To determine the eigenvector associated with $\lambda_{1}=3$, we solve 
+To determine the eigenvector associated with $\l_{1}=3$, we solve 
 \begin{align*}
 \bs{\begin{array}{ll}
 -2& 1\\ 
@@ -149,7 +149,7 @@ where $c_{1}$ and $c_{2}$ are arbitrary constants.
 \item Since the linear, two-variable, homogenous system has two eigenvalues of opposite sign, the trajectories of the system have the origin as a saddle point. See the treatment of the two-variable linear system with two eigenvalues of opposite sign in the lecture notes.
 \end{enumerate}
 
-\section*{Solution to Problem 4.}
+\section*{Solution to Problem 4}
 
 \begin{enumerate}
 \item $f(k)=k^{\a}$ with $\a\in(0,1)$ satisfies the Inada conditions.
@@ -158,12 +158,12 @@ where $c_{1}$ and $c_{2}$ are arbitrary constants.
 s\cdot f\bp{k^*} =\d \cdot k^*.
 \end{align*}
 
-\item Plot $k$ on the x-axis. Draw two curves $y=s\cdot f\bp{k} $ and $y=\d\cdot k$. The $y=s\cdot f\bp{k}$ curve is the saving curve. It is increasing and concave . The $y=\d\cdot  k$ curve is the depreciation curve. It is an increasing straight line. The intersection of these two curves is the steady state. Starting
+\item Plot $k$ on the x-axis. Draw two curves $y=s\cdot f(k) $ and $y=\d\cdot k$. The $y=s\cdot f(k)$ curve is the saving curve. It is increasing and concave . The $y=\d\cdot  k$ curve is the depreciation curve. It is an increasing straight line. The intersection of these two curves is the steady state. Starting
 from an initial $k_{0}$, $k(t)$ converge to $k^*$. This is because if $k(t)$ is to the left of $k^*$, $\dot{k}>0$
 so $k(t)$ increases to $k^{*}$; and if $k(t)$ is to the right of $k^*$, $\dot{k}<0$, so $k(t)$ decreases to $k^{*}$.
 \end{enumerate}
 
-\section*{Solution to Problem 5.}
+\section*{Solution to Problem 5}
 \begin{enumerate}
 \item See lecture notes.
 \item  The Jacobian matrix at the steady state is
@@ -174,12 +174,12 @@ so $k(t)$ increases to $k^{*}$; and if $k(t)$ is to the right of $k^*$, $\dot{k}
 \a \cdot \bp{\a -1}\cdot  A\cdot k^{\a -2} & 0
 \end{array}} 
 \end{align*}
-\item To show that the steady state is a saddle point locally, we must show that the eigenvalues of the Jacobian matrix evaluated at the steady state have opposite sign. The determinant of the Jacobian matrix is  $\det \bp{\bm{J}^{*}} =\a\cdot  \bp{\a -1}\cdot A\cdot k^{\a -2}<0$. As explained in the lecture notes, the two eigenvalues have opposite sign and the steady state is a saddle point locally.
+\item To show that the steady state is a saddle point locally, we must show that the eigenvalues of the Jacobian matrix evaluated at the steady state have opposite sign. The determinant of the Jacobian matrix is  $\det(\bm{J}^{*}) =\a\cdot  \bp{\a -1}\cdot A\cdot k^{\a -2}<0$. As explained in the lecture notes, the two eigenvalues have opposite sign and the steady state is a saddle point locally.
 
 \item An unanticipated decrease in $\rho $ at time $t_{0}$ means that the $\dot{c}=0$ locus shifts to the right at time $t_{0}$. The new steady state is $\bp{k^{**},c^{**}} $ with $k^{* *}>k^*$ and $c^{* *}>c^*$. There is a new saddle path for the new steady state. Given that $k$ is predetermined, it must remain at its steady-state level at $t_{0}$: $k\bp{t_{0}} =k^*$. Only consumption adjusts to bring the economy on the new saddle path. Thus at time $t_{0}$, the economy jumps to a point $\bp{k^*,c\bp{t_{0}}}$ on the new saddle path. Then it moves along the saddle path to converge to the new steady state.
 \end{enumerate}
 
-\section*{Solution to Problem 6.}
+\section*{Solution to Problem 6}
 \begin{enumerate}
 \item We plot the phase diagram in a $(k,q)$ plane. The $\dot{k}(t)=0$ locus is horizontal. The $\dot{q}(t)=0$ locus is described implicitly by
 \begin{align*}
@@ -189,17 +189,17 @@ There is no clear sign for the slope of the $\dot{q}(t)=0$ locus. However, if we
 \item The two differential equations show that $k(t)$ increases if we are to the right of the $\dot{k}(t)=0$ locus, and $q(t)$ increases if we are above the $\dot{q}(t)=0$ locus. Again, we have a saddle point locally.
 \end{enumerate}
 
-\section*{Solution to Problem 7.}
+\section*{Solution to Problem 7}
 
 \begin{enumerate}
 \item By definition
 \begin{align*}
-\D &k=f\bp{k} -\d\cdot  k-c \\
+\D &k=f(k) -\d\cdot  k-c \\
 \D &c=\bs{\b \cdot \bp{f'(k) +1-\d} -1}\cdot  c.
 \end{align*}
 Hence, the locus $\D k=0$ is defined by
 \begin{align*}
-c=f\bp{k} -\d\cdot  k,
+c=f(k) -\d\cdot  k,
 \end{align*}
 and the locus $\D c=0$ is defined by
 \begin{align*}
@@ -210,7 +210,7 @@ The intersection of these two curves is the steady state $\bp{k^*,c^*} $. The $\
 \item Follow the same procedure as that described in the lecture notes to analyze systems of nonlinear differential equations.
 \end{enumerate}
 
-\section*{Solution to Problem 8.}
+\section*{Solution to Problem 8}
 \begin{enumerate}
 \item $c(t)$ and $l(t)$ are the control variables. $k(t)$ and $h(t)$ are the state variables.
 \item The present-value Hamiltonian is

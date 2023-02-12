@@ -1,7 +1,7 @@
 \documentclass[letterpaper,12pt,leqno]{article}
 \usepackage{paper,math,notes}
 \newcommand{\pdf}{phasediagrams.pdf} 
-\available{https://www.pascalmichaillat.org/t3.html}
+\available{https://pascalmichaillat.org/c3/}
 \hypersetup{pdftitle={Differential Equations}}
 
 \begin{document}
@@ -15,13 +15,15 @@
 \tableofcontents
 \end{titlepage}
 
-\section{First-Order Differential Equations}\label{sec:one}
+\section{Linear First-Order Differential Equations}\label{sec:one}
+
+This section covers linear first-order differential equations. These are equations that relate a function to its first derivative in a linear way. They are the simplest differential equations.
 
 \subsection{Constant Growth Rate}
 
-Let $x(t)$ be a function of time $t\in\R$. Let \[\dot{x}(t)\equiv dx/dt\] denote the derivative of $x(t)$ with respect to time. 
+We consider a function $x(t)$ of time $t\in\R$. We denote the derivative of $x(t)$ with respect to time by \[\dot{x}(t)\equiv dx/dt.\] 
 
-Consider the equation 
+We consider the following differential equation:
 \begin{equation}
 \dot{x}(t) -\l\cdot x(t) = 0
 \label{eq:FODE1}\end{equation}
@@ -44,17 +46,16 @@ Observe that
 \end{equation*}
 which allows us to rewrite differential equation~\eqref{eq:FODE1} as 
 \begin{equation*}
-\frac{d\ln x(t)}{dt}=\l
+\frac{d\ln x(t)}{dt}=\l.
 \end{equation*}
 Let $t_{0}\in\R$. Integrating the equation from $t_{0}$ to $t$, $x(t)$ necessarily satisfies
 \begin{align*}
 \int_{t_{0}}^{t} d\ln x(t)&=\int_{t_{0}}^{t} \l\cdot dt\\
-\ln{x(t)} -\ln{ x\bp{t_{0}}}& =\l \bp{t-t_{0}}\\
+\ln{x(t)} -\ln{x(t_{0})}& =\l \bp{t-t_{0}}\\
 x(t)&=x(t_{0})\cdot  e^{\l \cdot(t-t_{0})}=\bs{x(t_{0})\cdot e^{-\l \cdot t_{0}}}\cdot e^{\l \cdot t}.
 \end{align*}
 Therefore, if $x(t)$ solves equation~\eqref{eq:FODE1}, it is necessarily of the type~\eqref{eq:FODE1sol}.
 
- 
 \subsection{Constant Coefficient}
 
 We have solved the simplest differential equation, which takes the form of equation~\eqref{eq:FODE1}. We now study a more general differential equation: 
@@ -77,7 +78,7 @@ To be able to solve the differential equation, we manipulate a certain function 
 \[\mu(t) =e^{-\l \cdot t}.\]
 This integrating factor $\mu(t)$ has the desirable property that $\dot{\mu}(t) =-\l \cdot \mu(t)$.
 
-We multiply both sides of the differential equation~\eqref{eq:FODE2} by the integrating factor to obtain
+We multiply both sides of the differential equation~\eqref{eq:FODE2} by the integrating factor:
 \begin{align*}
 \dot{x}(t) \cdot \mu(t) -\l \cdot x(t)\cdot  \mu(t) & =f(t) \cdot \mu(t)\\
 \dot{x}(t) \cdot\mu(t) +x(t) \cdot\dot{\mu}(t) &=f(t)\cdot \mu(t)\\
@@ -87,15 +88,15 @@ Integrating the equation from $t_{0}\in \R$ to $t$ we obtain
 \begin{align}
 \int_{t_{0}}^{t} d\bs{x(t) \cdot \mu(t)}&=\int_{t_{0}}^{t}f(z) \cdot \mu(z) dz\nonumber\\
 x(t)\cdot \mu(t)-x(t_{0})\cdot \mu\bp{t_{0}}&=\int_{t_{0}}^{t}f(z)\cdot  \mu(z) dz\nonumber\\
-x(t)& =\frac{x\bp{t_{0}} \cdot \mu\bp{t_{0}}+\int_{t_{0}}^{t}f(z) \cdot \mu(z) dz}{\mu(t)}.\label{eq:INTER}
+x(t)& =\frac{x(t_{0}) \cdot \mu\bp{t_{0}}+\int_{t_{0}}^{t}f(z) \cdot \mu(z) dz}{\mu(t)}.\label{eq:INTER}
 \end{align}
 Given the definition of the integrating factor $\mu(t)$, 
 \begin{align*}
-x(t)& =e^{\l \cdot t} \cdot \bs{x\bp{t_{0}} \cdot e^{-\l\cdot t_{0}}+\int_{t_{0}}^{t}f(z) \cdot e^{-\l \cdot z} dz}.
+x(t)& =e^{\l \cdot t} \cdot \bs{x(t_{0}) \cdot e^{-\l\cdot t_{0}}+\int_{t_{0}}^{t}f(z) \cdot e^{-\l \cdot z} dz}.
 \end{align*}
 Therefore, there exists $A\in \R$ such that 
 \begin{align*}
-x(t)& =e^{\l \cdot t} \cdot \bs{A+\int_{0}^{t}f(z) \cdot e^{-\l \cdot z} dz} .
+x(t)& =e^{\l \cdot t} \cdot \bs{A+\int_{0}^{t}f(z) \cdot e^{-\l \cdot z} dz}.
 \end{align*}
 
 \subsection{General Case}
@@ -121,7 +122,7 @@ Some algebra shows that functions of the type~\eqref{eq:FODE3sol} satisfy equati
 This integrating factor $\mu(t)$ has the desirable property that 
 \[\dot{\mu}(t) =-\l(t) \cdot \mu(t).\]
 
-We multiply both sides of equation~\eqref{eq:FODE3} by the integrating factor to obtain
+We multiply both sides of equation~\eqref{eq:FODE3} by the integrating factor:
 \begin{align*}
 \dot{x}(t) \cdot \mu(t) -\l(t) \cdot  \mu(t) \cdot x(t)& =f(t) \cdot \mu(t)\\
 \dot{x}(t) \cdot\mu(t) +x(t) \cdot \dot{\mu}(t) &=f(t)\cdot \mu(t)\\
@@ -133,7 +134,7 @@ Integrating the equation from $t_{0}\in \R$ to $t$ we obtain as earlier equation
 
 Often, an initial condition for $x(t) $ is given:
 \begin{equation}
-x\bp{t_{0}} =x_{0}.  \label{eq:ic}
+x(t_{0}) =x_{0}.  \label{eq:ic}
 \end{equation}
 Equation~\eqref{eq:FODE3} together with equation~\eqref{eq:ic} form an initial-value problem. The constant $A$ in~\eqref{eq:FODE3sol} must satisfy
 \[A=x_{0}\cdot \exp{-\int_{0}^{t_{0}}\l(s)ds}-\int_{0}^{t_{0}}f(z) \cdot \exp{-\int_{0}^{z}\l(s)ds} dz.\]
@@ -144,13 +145,14 @@ x(t) =x_{0}\cdot \exp{\int_{t_{0}}^{t}\l(s)ds}+\int_{t_{0}}^{t}f(z)\cdot \exp{\i
 
 \section{Linear Systems of First-Order Differential Equations}\label{sec:two}
 
-We often encounter dynamic systems with several variables that move together over time. For example in the consumption-saving problem that we solved with optimal control methods, in the case of CRRA utility, the solution is characterized by two first-order differential equations:
+We often encounter dynamical systems with several variables that move together over time. For example the solution to the consumption-saving problem with CRRA utility is characterized by two first-order linear differential equations:
 \begin{align*}
 \dot{a}(t) &=r\cdot a(t)-c(t), \\
 \dot{c}(t) &=\frac{r-\rho}{\g}\cdot  c(t).
 \end{align*}
-The first differential equation is the asset accumulation equation and the second differential equation is the Euler equation that characterizes optimal consumption over time. To solve explicitly for the optimal consumption path, we need to solve the two differential equations
-simultaneously. This section presents a method to solve systems of differential equations.
+The first differential equation is the asset accumulation equation. The second differential equation is the Euler equation that characterizes optimal consumption over time. To find the optimal consumption path, we need to solve the two differential equations simultaneously. This section presents a method to solve such linear systems of differential equations.
+
+\subsection{Linear System}
 
 We consider a linear system of $n$ first-order differential equations with constant coefficients:
 \begin{align*}
@@ -169,8 +171,7 @@ An alternative way of expressing the system is to write it in matrix form:
 \end{equation}
 where $\bm{\dot{x}}(t) \in \R^{n}$, $\bm{x}(t) \in \R^{n}$, and $\bm{f}(t) \in \R^{n}$ are column vectors with $n$ elements. $\bm{A}\in \R^{n\times n}$ is a constant $n\times n$ matrix. The system of first-order differential equations is linear because it can be written in matrix form: it involves a linear relationship between the vector $\bm{\dot{x}}(t)$ and the vector $\bm{x}(t)$.
 
-If $\bm{A}$ is diagonal ($A_{ij}=0$ for all $i\neq j$), the system would reduce to a collection of $n$ first-order differential equations---one first-order differential equation for each  $x_{i}(t)$---that can be solved independently using the techniques from Section~\ref{sec:one}.
-If $\bm{A}$ is not diagonal, the different entries in $\bm{x}(t)$ interact and we must solve the system of first-order differential equations simultaneously.
+If $\bm{A}$ is diagonal ($A_{ij}=0$ for all $i\neq j$), the system would reduce to a collection of $n$ first-order differential equations---one first-order differential equation for each  $x_{i}(t)$---that can be solved independently using the techniques from Section~\ref{sec:one}. If $\bm{A}$ is not diagonal, the different entries in $\bm{x}(t)$ interact and we must solve the system of first-order differential equations simultaneously.
 
 \subsection{General Solution}
 
@@ -183,13 +184,12 @@ columns are the eigenvectors $\bm{z}_{1},\ldots,\bm{z}_{n}$ of $\bm{A}$.
 
 By definition, $\l_{1},\ldots,\l_{n}$ are the $n$ roots of the polynomial equation
 \begin{equation*}
-\det( \bp{\bm{A}-\l \bm{I}} =0.
+\det(\bm{A}-\l \bm{I}) =0.
 \end{equation*}
 For any $i=1,\dots,n$, the eigenvector $\bm{z}_{i}$ associated with the eigenvalue $\l_{i}$ satisfies 
 \begin{equation*}
 \bp{\bm{A}-\l_{i} \bm{I}} \bm{z}_{i} =\bm{0}.
 \end{equation*}
-
 
 Using the decomposition~\eqref{eq:DECO}, we rewrite the system \eqref{eq:FODEsys} as
 \begin{align}
@@ -207,11 +207,11 @@ Since the matrix $\bm{\Lambda}$ is diagonal, the system is reduced to a collecti
 \end{equation*}
 The nature of the eigenvalues and corresponding eigenvectors determines the dynamics of the solution.
 
-\subsection{Homogenous Systems}
+\subsection{Homogeneous Systems}
 
-If $\bm{f}(t) =\bm{0}$, the system \eqref{eq:FODEsys} is homogenous; otherwise it is nonhomogenous. 
+If $\bm{f}(t) =\bm{0}$, the system \eqref{eq:FODEsys} is homogeneous; otherwise it is nonhomogeneous. 
 
-For homogenous systems, 
+For homogeneous systems, 
 \begin{equation}
 \bm{\dot{x}}(t) =\bm{A} \bm{x}(t).\label{eq:FODEsysh}
 \end{equation}
@@ -232,16 +232,16 @@ where $A_{i}\in \R$ is a constant. Finally, $x_{1}(t),\ldots,x_{n}(t)$ are given
 \bm{x}(t) =\bm{V} \bm{y}(t) .
 \end{equation*}
 The columns of $\bm{V}$ are the eigenvectors $\bm{z}_{1},\ldots,\bm{z}_{n}$ corresponding to the
-eigenvalues $\l_{1},...\l_{n}$. Hence the solution of the homogenous system~\eqref{eq:FODEsysh} is 
+eigenvalues $\l_{1},...\l_{n}$. Hence the solution of the homogeneous system~\eqref{eq:FODEsysh} is 
 \begin{equation}
 \bm{x}(t) =A_{1}\cdot \bm{z}_{1} \cdot e^{\l_{1}\cdot t}+\ldots+A_{n}\cdot \bm{z}_{n}\cdot e^{\l_{n}\cdot t}.\label{eq:SOLEV}
 \end{equation}
 The nature of the eigenvalues and the corresponding eigenvectors determines
 the dynamics of the solution. 
 
-\subsection{Closed-Form Solution to a Two-Variable Homogenous System}
+\subsection{Closed-Form Solution to a Two-Variable Homogeneous System}
 
-As an example, we consider a two-variable homogenous system:
+As an example, we consider a two-variable homogeneous system:
 \begin{align*}
 \dot{x}_{1}(t) &=a\cdot x_{1}(t)+b\cdot x_{2}(t) \\
 \dot{x}_{2}(t) &=c\cdot x_{1}(t)+d\cdot x_{2}(t).
@@ -260,7 +260,7 @@ c & d
 \end{equation*}
 Assume $\det(\bm{A}) =a\cdot d-b\cdot c\neq 0. $
 
-Equation~\eqref{eq:SOLEV} implies that to determine a closed-form solution of this homogenous system, we need to find the eigenvalues and eigenvectors of the matrix $\bm{A}$.
+Equation~\eqref{eq:SOLEV} implies that to determine a closed-form solution of this homogeneous system, we need to find the eigenvalues and eigenvectors of the matrix $\bm{A}$.
 
 The eigenvalues are solutions to 
 \begin{align*}
@@ -301,20 +301,20 @@ Consider the cases where the eigenvalues are real and distinct, the general
 solution~\eqref{eq:SOLEV} implies
 \begin{align*}
 x_{1}(t) &=A_{1}\cdot \a_{1}\cdot e^{\l_{1}\cdot t}+A_{2}\cdot \a_{2}\cdot e^{\l_{2}\cdot t}\\
-x_{2}(t) &=A_{1}\cdot \b_{1}\cdot e^{\l_{1}\cdot t}+A_{2}\cdot \b_{2}\cdot e^{\l_{2}\cdot t} 
+x_{2}(t) &=A_{1}\cdot \b_{1}\cdot e^{\l_{1}\cdot t}+A_{2}\cdot \b_{2}\cdot e^{\l_{2}\cdot t},
 \end{align*}
 where $A_{1}$ and $A_{2}$ are arbitrary constants. 
 
 Note that in the case in which $\l_{1}=\l_{2}=\l$, the system $\bs{x_{1}(t),x_{2}(t)}$ above is still the general solution of the system of differential equations as long as the two eigenvectors $\bs{\a_{1},\b_{1}}$ and $\bs{\a_{2},\b_{2}}$ are linearly independent.
 
-Also note that any nonhomogenous system with constant terms $\bs{\k_{1},\k_{2}}$:
+Also note that any nonhomogeneous system with constant terms $\bs{\k_{1},\k_{2}}$:
 \begin{align*}
 \dot{x}_{1}(t) &=a\cdot x_{1}(t)+b\cdot x_{2}(t)+\k_{1} \\
 \dot{x}_{2}(t) &=c\cdot x_{1}(t)+d\cdot x_{2}(t)+\k_{2},
 \end{align*}
-can be transformed into an homogenous system.
+can be transformed into an homogeneous system.
 
-\subsection{Stability of a Two-Variable Homogenous System}
+\subsection{Stability of a Two-Variable Homogeneous System}
 
 Now that we have found a closed-form solution to the system, we can analyze its stability. There are three cases.
 
@@ -329,10 +329,12 @@ Now that we have found a closed-form solution to the system, we can analyze its 
 
 Without solving for eigenvalues and eigenvectors explicitly, we can study the properties of a linear system of first-order differential equations by drawing its phase diagram. 
 
-Here we construct the phase diagram for the following linear nonhomogenous system of two first-order differential equations:
+\subsection{Nonhomogeneous Linear System}
+
+Here we construct the phase diagram for the following nonhomogeneous linear system of two first-order differential equations:
 \begin{align}
 \dot{x}(t) &=a\cdot x(t)+b\cdot y(t)+\k_{1}\label{eq:nonh1}\\
-\dot{y}(t) &=c\cdot x(t)+d\cdot y(t)+\k_{2}\label{eq:nonh2}
+\dot{y}(t) &=c\cdot x(t)+d\cdot y(t)+\k_{2}\label{eq:nonh2},
 \end{align}
 with $a<0$, $b<0$, $c<0$, $d>0$, $\k_{1}>0$, and $\k_{2}>0$. Since $a\cdot d-b\cdot c<0$, the eigenvalues of the system are of opposite sign. Hence the dynamical system is a saddle.
 
@@ -345,7 +347,6 @@ Drawing the phase diagram of a two-variable system is useful to understand the m
 \subcaptionbox{Trajectories \label{f:phase4}}{\includegraphics[scale=\sfig,page=4]{\pdf}}
 \caption{Phase diagram for the dynamical system \eqref{eq:nonh1}--\eqref{eq:nonh2}}
 \label{f:phase}\end{figure}
-
 
 \subsection{Nullclines}
 
@@ -396,16 +397,19 @@ Among all the trajectories, we highlight the saddle path for the system. We know
 
 Suppose $x$ is a state variable: information revealed at $t$ does not influence its value at $t$. Suppose $y$ is a control variable: information revealed at $t$ may influence its value at $t$. Suppose that we are in the steady state $\bp{x^{*},y^{*}}$ of the previous phase diagram. 
 
-Assume that there is an exogenous, unanticipated increase in $\k_{2}$. This increase is revelation of news because it is an unanticipated change to one of the parameters or variables of the system. The response to the news in the phase diagram is represented in figure~\ref{f:news}.
+Now assume that there is an exogenous, unanticipated increase in $\k_{2}$. This increase is revelation of news because it is an unanticipated change to one of the parameters or variables of the system. The response to the news in the phase diagram is represented in figure~\ref{f:news}.
 
 As $\k_{2}$ increases, the $\dot{y}=0$ locus shifts down, so the new steady state $\bp{x^{* *},y^{* *}} $ is to the south-east of the previous steady state: $x^{* *}>x^{*}$ and $y^{* *}<y^{*}.$ There is also a new saddle path passing through this new steady state.
 
-Where do we start after the news is revealed at $t=t_{r}$? That is, what are $x\bp{t_{r}}$ and $y\bp{t_{r}}$? Since $x$ is the state variable, it cannot respond to the news, and $x\bp{t_{r}} =x^{*}$. For the system to converge to the new steady state, it must arrive at the steady-state level $x^{* *}$ of the state variable along the new saddle path. So $y\bp{t_{r}} $ must be on the new saddle path at $x^{*}$, and over time both $x(t) $ and $y(t) $ move along the saddle path until they converge to the new steady state. To sum up, the system jumps from $\bp{x^{*},y^{*}}$ to $\bp{x^{*},y\bp{t_{r}}} $, and then moves along the saddle path until it reaches $\bp{x^{* *},y^{* *}}$.
-
+Where do we start after the news is revealed at $t=t_{r}$? That is, what are $x(t_{r})$ and $y(t_{r})$? Since $x$ is the state variable, it cannot respond to  news, and $x(t_{r})= x^{*}$. For the system to converge to the new steady state, it must arrive at the steady-state level $x^{* *}$ of the state variable along the new saddle path. So $y(t_{r})$ must be on the new saddle path at $x^{*}$, and over time both $x(t)$ and $y(t)$ move along the saddle path until they converge to the new steady state. To sum up, the system jumps from $\bp{x^{*},y^{*}}$ to $\bp{x^{*},y(t_{r})}$, and then moves along the saddle path until it reaches $\bp{x^{* *},y^{* *}}$.
 
 \section{Nonlinear Systems of First-Order Differential Equations}
 
-Unlike the systems of first-order differential equations studied in sections~\ref{sec:two} and~\ref{sec:three}, which were linear, systems of first-order differential equations in macroeconomics are often nonlinear. For example the typical growth model is characterized by the following nonlinear system of first-order differential equations:
+Unlike the systems of first-order differential equations studied in sections~\ref{sec:two} and~\ref{sec:three}, which were linear, systems of first-order differential equations in macroeconomics are often nonlinear. It is difficult to solve such systems explicitly. But without solving them explicitly, we can characterize their properties by constructing their phase diagrams. This is what we do in this section.
+
+\subsection{Nonlinear System}
+
+For example the typical growth model is characterized by the following nonlinear system of first-order differential equations:
 \begin{align}
 \dot{k}(t) &=f\bp{k(t)} -c(t)-\d \cdot k(t),  \label{eq:growth1} \\
 \dot{c}(t) &=\bs{f'\bp{k(t)} -\bp{\d+\rho}}\cdot c(t), \label{eq:growth2}
@@ -415,30 +419,28 @@ with $k_{0}$ given, and the production function $f$ satisfies the Inada conditio
 \begin{align*}
 f\bp{0}=0,\; f'>0,\;f''<0,\;\lim_{k\to +\infty}f'(k)=0,\;\lim_{k\to 0}f'(k) =+\infty.
 \end{align*}
-It is difficult to solve this system explicitly. But without solving it explicitly, we can characterize its properties by constructing its phase diagram. This is what we do in this section.
 
-We draw the phase diagram in a plane with the state variable $k$ on the x-axis and the control variable $c$ on the y-axis (figure~\ref{f:growth}).
-
+We study the properties of this system by drawing its phase diagram in a plane with the state variable $k$ on the x-axis and the control variable $c$ on the y-axis (figure~\ref{f:growth}).
 
 \begin{figure}[p]
 \subcaptionbox{Nullclines \label{f:growth1}}{\includegraphics[scale=\sfig,page=9]{\pdf}}\hfill
 \subcaptionbox{Steady state \label{f:growth2}}{\includegraphics[scale=\sfig,page=10]{\pdf}}\vfig
 \subcaptionbox{Directional arrows \label{f:growth3}}{\includegraphics[scale=\sfig,page=11]{\pdf}}\hfill
 \subcaptionbox{Trajectories\label{f:growth4}}{\includegraphics[scale=\sfig,page=12]{\pdf}}
-\caption{Phase diagram for a simple growth model}
+\caption{Phase diagram of a simple growth model}
 \label{f:growth}\end{figure}
 
 \subsection{Nullclines}
 
 We first draw the nullclines (figure~\ref{f:growth1}). We draw the $\dot{k}=0$ curve defined by
 \begin{align*}
-c=f\bp{k} -\d\cdot k
+c=f\bp{k} -\d\cdot k,
 \end{align*}
 and the $\dot{c}=0$ curve defined by
 \begin{align*}
 f^{\prime}\bp{k} =\d +\rho.
 \end{align*}
-In the $(k,c)$ plane, the $\dot{k}=0$ curve is concave and the $\dot{c}=0$ curve is a vertical line .
+In the $(k,c)$ plane, the $\dot{k}=0$ curve is concave and the $\dot{c}=0$ curve is a vertical line.
 
 \subsection{Steady State}
 
@@ -483,13 +485,13 @@ where $\bm{J}^{*}$ is the Jacobian matrix evaluated at the steady state:
 \pdw{\dot{c}}{k}{(k^{*},c^{*})} & \pdw{\dot{c}}{c}{(k^{*},c^{*})}
 \end{array}}.
 \end{equation*}
-This system is a two-variable nonhomogenous system of first-order differential equations
+This system is a two-variable nonhomogeneous system of first-order differential equations
 for \[\bm{x}=\bs{\begin{array}{l}
 k\\ 
 c
 \end{array}}.\]
 
-But it is a two-variable homogenous system for the transformed variable $\bm{y}$, where
+But it is a two-variable homogeneous system for the transformed variable $\bm{y}$, where
 \begin{equation*}
 \bm{y}=\bm{x}-\bm{x}^{*}=\bs{
 \begin{array}{l}
@@ -502,7 +504,7 @@ The constant matrix $A$ of Section~\ref{sec:two} is $\bm{J}^{*}$. The analysis o
 \pdw{\dot{k}}{k}{(k^{*},c^{*})}&=f'(k^{*}) -\d =\rho >0 \\
 \pdw{\dot{k}}{c}{(k^{*},c^{*})}&=-1<0 \\
 \pdw{\dot{c}}{k}{(k^{*},c^{*})}&=c\cdot f''\bp{k^{*}} <0 \\
-\pdw{\dot{c}}{c}{(k^{*},c^{*})}&=f'(k^{*}) -\bp{\d +\rho} =0
+\pdw{\dot{c}}{c}{(k^{*},c^{*})}&=f'(k^{*}) -\bp{\d +\rho} =0.
 \end{align*}
 It follows that the Jacobian matrix can be written 
 \begin{equation*}
@@ -510,7 +512,7 @@ It follows that the Jacobian matrix can be written
 \begin{array}{ll}
 \rho  & -1  \\ 
 c\cdot f''(k) & 0
-\end{array}}
+\end{array}}.
 \end{equation*}
 As shown by~\eqref{eq:DETL}, the product of the two eigenvalues is the determinant of $\bm{J}^{*}$:  \[\det(\bm{J}^{*})=c\cdot f''(k) <0.\] Therefore, the two eigenvalues have opposite sign. This property confirms that around the steady state the system is a saddle.
 

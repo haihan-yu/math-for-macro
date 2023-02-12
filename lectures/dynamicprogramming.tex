@@ -1,6 +1,6 @@
 \documentclass[letterpaper,12pt,leqno]{article}
 \usepackage{paper,math,notes}
-\available{https://www.pascalmichaillat.org/t3.html}
+\available{https://pascalmichaillat.org/c3/}
 \hypersetup{pdftitle={Dynamic Programming}}
 
 \begin{document}
@@ -113,11 +113,11 @@ a_{t+1}&=(1+r)\cdot a_t-c_t.
 \end{align*}
 Eliminating $c_t$, we rewrite the value function as
 \begin{align*}
-V(a_0)=&\max[\{0\leq a_{t+1}\leq (1+r)\cdot a_t\}_{t=0}^{+\infty}] \sum_{t=0}^{+\infty}\b^t \cdot  u((1+r)\cdot a_t-a_{t+1}).
+V(a_0)=\max[\{0\leq a_{t+1}\leq (1+r)\cdot a_t\}_{t=0}^{+\infty}] \sum_{t=0}^{+\infty}\b^t \cdot  u((1+r)\cdot a_t-a_{t+1}).
 \end{align*}
 Separating the first term in the utility function from the rest of the sum, we obtain
 \begin{align*}
-V(a_0)=&\max[\{0\leq a_{t+1}\leq  (1+r)\cdot a_t\}_{t=0}^{+\infty}] \bc{u((1+r)\cdot a_0-a_1)+\b \cdot \sum_{t=1}^{+\infty}\b^{t-1} \cdot u((1+r)\cdot a_t-a_{t+1})}.
+V(a_0)=\max[\{0\leq a_{t+1}\leq  (1+r)\cdot a_t\}_{t=0}^{+\infty}] \bc{u((1+r)\cdot a_0-a_1)+\b \cdot \sum_{t=1}^{+\infty}\b^{t-1} \cdot u((1+r)\cdot a_t-a_{t+1})}.
 \end{align*}
 We re-index the terms in the sum:
 \begin{align*}
@@ -125,8 +125,7 @@ V(a_0)=&\max[\{0\leq a_{t+1}\leq  (1+r)\cdot a_t\}_{t=0}^{+\infty}] \bc{u((1+r)\
 \end{align*}
 We separate the maximization process in two stages: choose consumption in period 0 given wealth in period 0, and choose all future consumption given wealth in period 1. Thus, we rewrite the value function as
 \begin{align*}
-V(a_0)=&\max_{0\leq a_{1}\leq (1+r)\cdot a_0}\bc{u((1+r)\cdot a_0-a_1)+\b\max_{\{0\leq a_{t+2}\leq
-a_{t+1}\}_{t=0}^{+\infty}}\sum_{t=0}^{+\infty}\b^{t} \cdot  u((1+r)\cdot a_{t+1}-a_{t+2})}.
+V(a_0)=&\max_{0\leq a_{1}\leq (1+r)\cdot a_0}\bc{u((1+r)\cdot a_0-a_1)+\b\max_{\{0\leq a_{t+2}\leq a_{t+1}\}_{t=0}^{+\infty}}\sum_{t=0}^{+\infty}\b^{t} \cdot  u((1+r)\cdot a_{t+1}-a_{t+2})}.
 \end{align*}
 By definition, the second term is exactly the value function $V(a_{1})$ so we can simplify the equation to
 \begin{align*}
@@ -152,21 +151,20 @@ The policy function provides a mapping from state to actions. It tells us how mu
 
 To solve the optimization problem defined in section~\ref{subsec:PROBLEM} using dynamic programming, we proceed in five steps:
 \begin{enumerate}
- \item write down the Bellman equation
- \item write down the first-order conditions of the optimization program
- \item write down the Benveniste-Scheinkman equation to determine the derivative of the value function with respect
-to wealth, $a_{t}$
-  \item apply the Benveniste-Scheinkman equation to next period's wealth, $a_{t+1}$, and plug into the first-order
+ \item Write down the Bellman equation
+ \item Write down the first-order conditions of the optimization program
+ \item Write down the Benveniste-Scheinkman equation to determine the derivative of the value function with respect to wealth, $a_{t}$
+\item Apply the Benveniste-Scheinkman equation to next period's wealth, $a_{t+1}$, and plug into the first-order
 conditions
- \item derive the Euler equation, which summarizes the optimal intertemporal behavior of consumption, $c_{t}$
+ \item Derive the Euler equation, which summarizes the optimal intertemporal behavior of consumption, $c_{t}$
 \end{enumerate}
 
 
 \subsection{Step 1: Bellman Equation}
 
-Because of the recursive structure of the consumption-saving problem, the value function, $V$, satisfies the Bellman equation:
+Thanks to the recursive structure of the consumption-saving problem, the value function $V$ satisfies the Bellman equation:
 \begin{align}
- V(a)=\max_{c\in[0,(1+r)\cdot a]}u(c)+\b \cdot V((1+r)\cdot a-c)\label{eq:bellman}.
+V(a)=\max_{c\in[0,(1+r)\cdot a]}u(c)+\b \cdot V((1+r)\cdot a-c)\label{eq:bellman}.
 \end{align}
 
 \begin{itemize}
@@ -185,7 +183,7 @@ We rewrite the Bellman equation to get rid of the state variable, $a$, in the te
 
 Substituting $a'$ for $c$, the Bellman equation becomes
 \begin{equation}
- V(a)=\max_{a'\in[0,(1+r)\cdot a]} u((1+r)\cdot a-a')+\b  \cdot V(a').\label{eq:recursive}
+V(a)=\max_{a'\in[0,(1+r)\cdot a]} u((1+r)\cdot a-a')+\b  \cdot V(a').\label{eq:recursive}
 \end{equation}
 After this manipulation, the term $\b \cdot  V((1+r)\cdot a-c)$ has become $\b \cdot  V(a')$; it now only depends on the control variable. This property will be convenient to apply the envelope theorem later on.
 
@@ -193,34 +191,34 @@ After this manipulation, the term $\b \cdot  V((1+r)\cdot a-c)$ has become $\b \
 
 For now, let's assume that $V$ does exit and is differentiable. The first step is to take the first-order condition in the optimization program:
 \begin{equation*}
-\max_{a'\in[0,(1+r)\cdot a]} u((1+r)\cdot a-a')+\b \cdot V(a')
+\max_{a'\in[0,(1+r)\cdot a]} u((1+r)\cdot a-a')+\b \cdot V(a').
 \end{equation*}
 The first-order condition with respect to $a'$ is
 \begin{align}
 0=&(-1)\cdot \pd{u}{c}((1+r)\cdot a-a')+\b \cdot \od{V}{a}(a')\nonumber\\
-\od{u}{c}(c)&=\b \cdot \od{V}{a}(a')\label{eq:FOC}
+\od{u}{c}(c)&=\b \cdot \od{V}{a}(a').\label{eq:FOC}
 \end{align}
 
 \subsection{Step 3: Benveniste-Scheinkman Equation}
 
 In the first-order condition~\eqref{eq:FOC}, we do not know  the derivative $\odx{V}{a}$ of the value function. Hence, the next step is to determine what the derivative $\odx{V}{a}$ of the value function is. To do so, we apply the envelope theorem to the Bellman equation~\eqref{eq:recursive}, which yields
 \begin{equation}
- \od{V}{a}(a)=(1+r)\cdot \od{u}{c}(c) \label{eq:BS}
+ \od{V}{a}(a)=(1+r)\cdot \od{u}{c}(c).\label{eq:BS}
 \end{equation}
-This equation is often referred to as the \textit{Benveniste-Scheinkman equation}. It holds for any $a$.
+This equation is the \textit{Benveniste-Scheinkman equation}. It holds for any $a$.
 
 \subsection{Step 4: One Step Forward}
 
 Equation \eqref{eq:BS} is valid for any state variable $a$. In particular, it is valid for next period's state variable:
 \begin{equation}
-\od{V}{a}(a')=(1+r)\cdot \od{u}{c}(c')\label{eq:BS2}.
+\od{V}{a}(a')=(1+r)\cdot \od{u}{c}(c').\label{eq:BS2}
 \end{equation}
 
 \subsection{Step 5: Euler equation}
 
 If we plug equation \eqref{eq:BS2} into equation \eqref{eq:FOC}, we obtain the Euler equation in terms of current period's consumption $c$ and next period's consumption $c'$:
 \begin{equation}
-\od{u}{c}(c)=(1+r)\cdot \b \cdot \od{u}{c}(c')\label{Euler}.
+\od{u}{c}(c)=(1+r)\cdot \b \cdot \od{u}{c}(c').\label{Euler}
 \end{equation}
 Note that this Euler equation is exactly the same as that obtained with the Lagrangian method (see equation \eqref{eq:eulerdp}). Indeed, the Lagrangian method and the dynamic programming method are equivalent.
 
@@ -270,7 +268,6 @@ Equations \eqref{eq:eqA} and \eqref{eq:eqB} define the parameters of the value f
 
 Notice that we did not use the Benveniste-Scheinkman equation. The reason is that we assumed a functional form for the value function $V$, so we could compute the derivative  $\odx{V}{a}$  directly, without resorting to the Benveniste-Scheinkman equation.
 
-
 Using equation \eqref{eq:eqB}, we can rewrite equation \eqref{eq:focAB}
 \begin{equation*}
 a'=\b  \cdot (1+r)\cdot a.
@@ -281,7 +278,6 @@ h(a)&=c^*=(1+r)\cdot a-(a')^*\\
 h(a)&=(1-\b)\cdot  (1+r)\cdot a.
 \end{align*}
 In this simple problem, we have been able to find a closed-form solution for the policy function. Unfortunately, it is usually not possible to find closed-form solutions to a dynamic program, and we must resort to numerical methods. 
-
 
 \section{Simple Stochastic Problem}\label{sec:stochastic}
 
@@ -301,7 +297,7 @@ The problem can be solved as before. The major difference is that the value func
 
 The Bellman equation becomes
 \begin{equation*}
- V(a,\e)=\max_{a'\in[0,(1+r)\cdot a]} \bc{\e \cdot u((1+r)\cdot a-a')+\b\cdot \E[\e'|\e]{ V(a',\e')}}
+V(a,\e)=\max_{a'\in[0,(1+r)\cdot a]} \bc{\e \cdot u((1+r)\cdot a-a')+\b\cdot \E[\e'|\e]{ V(a',\e')}}.
 \end{equation*}
 \subsection{Step 2: First-order condition}
 Taking the first-order condition with respect to $a'$ in the Bellman equation yields
@@ -316,12 +312,12 @@ designates the partial derivative of the value function $V(a,\e)$ with respect t
 
 In the first-order condition~\eqref{eq:foc0}, we do not know the derivative $\pdx{V}{a}$ of the value function. We determine $\pdx{V}{a}$ by applying the Benveniste-Scheinkman equation:
 \begin{equation}
-\pd{V}{a}(a,\e)= (1+r)\cdot  \e \cdot \od{u}{c}((1+r)\cdot a-a') \label{eq:bs1}
+\pd{V}{a}(a,\e)= (1+r)\cdot  \e \cdot \od{u}{c}((1+r)\cdot a-a').\label{eq:bs1}
 \end{equation}
 \subsection{Step 4: One step forward}
 Equation \eqref{eq:bs1} is valid for any vector $(a,\e)$ of state variables. In particular, it is valid for the vector $(a',\e')$ of next period's state variables. Hence,
 \begin{equation}
-\pd{V}{a}(a',\e')= (1+r)\cdot \e'\cdot \od{u}{c}((1+r)\cdot a'-a'')\label{eq:onestep0}
+\pd{V}{a}(a',\e')= (1+r)\cdot \e'\cdot \od{u}{c}((1+r)\cdot a'-a'').\label{eq:onestep0}
 \end{equation}
 
 \subsection{Step 5: Euler Equation}
@@ -340,12 +336,13 @@ The policy function specifies a contingent plan of consumption, which depends on
 \e \cdot \od{u}{c}(h(a,\e))=(1+r)\cdot\b \cdot \E[\e'|\e]{ \od{u}{c}(h(a',\e'))}.
 \end{equation*}
 
-
 \section{Real Business-Cycle Model}
 
 Sections \ref{sec:deterministic} and \ref{sec:stochastic} apply dynamic programming to very simple optimization problems. However, dynamic programming has a wide range of applications and can be used to solve complex problems in macroeconomics. To illustrate how to use dynamic programming in a macroeconomic model, we solve for the equilibrium of a real business cycle model using dynamic programming.
 
 \subsection{Model}
+
+The model is built up from the following elements:
 
 \begin{itemize}
 \item Preferences of the representative household: \[\E[0]{\sum_{t=0}^{\infty}\b^t \cdot u\bp{C_{t},L_{t}}
@@ -359,7 +356,6 @@ Sections \ref{sec:deterministic} and \ref{sec:stochastic} apply dynamic programm
 \item Technology shock: $\ln A_{t} =\rho_{A}\cdot \ln A_{t-1} +\varepsilon^{A}_{t}$, $|\rho_{A}|<1$, $\varepsilon^{A}_{t}\sim N(0,\s_{A}^{2})$, $\s_{A}>0$.
 \end{itemize}
 
-
 \subsection{Optimal Allocation}
 
 \begin{definition} The optimal allocation is the collection of stochastic processes $\bc{C_{t},I_{t},Y_{t},K_{t},A_{t},L_{t}}_{t=0}^{\infty}$ that solves:
@@ -371,7 +367,7 @@ subject to
 K_{t+1} &=(1-\d)  \cdot K_{t}+I_{t}\label{eq:rbc1}\\
 Y_{t}&=K_{t}^{\a}\cdot \bp{A_{t} \cdot L_{t}}^{1-\a}\label{eq:rbc2}\\
 Y_{t}&=C_{t}+I_{t}\label{eq:rbc3}\\
-\ln A_{t} &=\rho_{A}\cdot \ln A_{t-1} +\varepsilon^{A}_{t},\;\varepsilon^{A}_{t}\sim N(0,\s_{A}^{2}).\nonumber\\number
+\ln A_{t} &=\rho_{A}\cdot \ln A_{t-1} +\varepsilon^{A}_{t},\;\varepsilon^{A}_{t}\sim N(0,\s_{A}^{2}).\nonumber
 \end{align}
 \end{definition}
 The welfare theorems imply that the allocation in the competitive equilibrium coincides with the optimal allocation; thus, we focus on the optimal allocation.
@@ -422,7 +418,7 @@ By taking the ratio of equations~\eqref{eq:xx2} and~\eqref{eq:xx3},  we obtain t
 \begin{equation}
 \frac{\t \cdot C}{(1-L)^{\g}}=(1-\a) \cdot \frac{Y}{L} \label{eq:intra}.
 \end{equation}
-This condition simply says that the marginal rate of substitution between leisure and consumption (the left-hand side of the equation) equals the marginal product of labor (the right-hand side of the equation) in the optimal  allocation.
+This condition simply says that the marginal rate of substitution between leisure and consumption (left-hand side of the equation) equals the marginal product of labor (right-hand side of the equation) in the optimal allocation.
 
 \paragraph{Step 3: Benveniste-Scheinkman Equation} We use the Benveniste-Scheinkman equation to determine $\pdx{V}{K}$ and make progress on~\eqref{eq:xx2}: 
 \begin{align*}
@@ -447,13 +443,13 @@ Finally, we combine the first-order condition~\eqref{eq:xx2} with equation~\eqre
 \begin{equation}
 \frac{1}{C}=\b \cdot \E[A'|A]{R'\cdot\frac{1}{C'}}.\label{eq:euler}
 \end{equation}
-Our goal is to solve explicitly for the stochastic processes of the key variables in this model (consumption, leisure, capital, etc.). There are two approaches to solve for these stochastic processes literature: (1) simplify the economic environment; (2) find an approximate analytical solution by log-linearizing the model. Here we follow approach (1).
+We aim to solve explicitly for the stochastic processes of the key variables in this model (consumption, leisure, capital, and so on). There are two approaches to solve for these stochastic processes literature: (1) simplify the economic environment; (2) find an approximate analytical solution by log-linearizing the model. Here we follow the first approach.
 
 \subsection{Simplifying Assumptions}
 
 The model contains a mixture of linear and log-linear elements which make it impossible to find a closed-form solution. To eliminate the linear elements in the model and only keep log-linear elements, we assume full capital depreciation: $\d=1$. This assumption imply that the capital-accumulation equation simplifies to
 \begin{align*}
-K'=I=Y-C=s\cdot Y
+K'=I=Y-C=s\cdot Y,
 \end{align*}
 where $s$ is the current saving rate. Under these assumptions, we simplify the Euler equation as follows:
 \begin{align*}
@@ -464,7 +460,7 @@ where $s$ is the current saving rate. Under these assumptions, we simplify the E
 
 We solve this equation by guessing and verifying. We guess that the saving rate remains constant over time: $s=s'=s^*$. In that case, 
 \begin{align*}
-\frac{s^*}{\bp{1-s^*}}=\a\cdot \b \cdot \E[A'|A]{\frac{1}{\bp{1-s^*}}}=\frac{\a\cdot \b}{\bp{1-s^*}  }
+\frac{s^*}{\bp{1-s^*}}=\a\cdot \b \cdot \E[A'|A]{\frac{1}{\bp{1-s^*}}}=\frac{\a\cdot \b}{\bp{1-s^*} }.
 \end{align*}
 Thus $s^* =\a\cdot \b$. Using this result in the first-order condition~\eqref{eq:intra} yields
 \begin{align*}
@@ -498,7 +494,7 @@ solves the original problem.
 
 The Principle of Optimality allows us to write the value function $V$ as the solution of a functional equation
 \begin{equation}
-V(a)=\max_{c}\bc{u(a,c)+\b\cdot V(g(a,c))}\label{eq:bellmansymb}
+V(a)=\max_{c}\bc{u(a,c)+\b\cdot V(g(a,c))}.\label{eq:bellmansymb}
 \end{equation}
 This functional equation is the Bellman equation.\footnote{The proof of the Principle of Optimality is due to Bellman. The formal derivation and proof of this result, as well as the conditions under which this result holds, are omitted here.} 
 
@@ -542,7 +538,7 @@ designates the derivative of the function $V(a)$ with respect to the variable $a
 
 In the first-order condition~\eqref{eq:focsymb}, we do not know  the derivative $\odx{V}{a}$ of the value function (because we do not know the value function). Hence, the next step is to determine what the derivative $\odx{V}{a}$ of the value function is. To do so, we apply the Benveniste-Scheinkman theorem. This theorem says that under some regularity conditions,
 \begin{align}
-\od{V}{a}(a)=\pd{ u}{a}(a,h(a))+\b\cdot \pd{ g}{a}(a,h(a))\cdot \od{V}{a}(g(a,h(a)))\label{eq:BSET}
+\od{V}{a}(a)=\pd{ u}{a}(a,h(a))+\b\cdot \pd{ g}{a}(a,h(a))\cdot \od{V}{a}(g(a,h(a))).\label{eq:BSET}
 \end{align}
 The theorem is a version of the envelope theorem applied to the Bellman equation~\eqref{eq:bellmansymb}.
 
@@ -556,14 +552,11 @@ Combining this equation with the Benveniste-Scheinkman equation~\eqref{eq:BSET} 
 \begin{align}
 \od{V}{a}(a)=\pd{u}{a}(a,h(a))-\pd{u}{c}(a,h(a))\cdot \frac{\pdx{g(a,h(a))}{a}}{\pdx{g(a,h(a))}{c}}.\label{eq:plug}
 \end{align}
-This step is necessary when \[\pd{g(a,c)}{a}\neq 0.\] In the consumption-saving problem, we picked a
-control variable---next period's wealth, $a'$---such that the state variable, $a$, does not enter the transition
-function, $g$. Therefore, we could bypass this step.
+This step is necessary when \[\pd{g(a,c)}{a}\neq 0.\] In the consumption-saving problem, we picked a control variable---next period's wealth, $a'$---such that the state variable, $a$, does not enter the transition function, $g$. Therefore, we could bypass this step.
 
 \subsection{Step 4: One Step Forward}
 
-Equation \eqref{eq:plug} is true for any value of the state variable $a$. In particular, it is true for $a'=g(a,h(a))$.
-Therefore
+Equation \eqref{eq:plug} is true for any value of the state variable $a$. In particular, it is true for $a'=g(a,h(a))$. Therefore
 \begin{align}
 \od{V}{a}(a')=\pd{u}{a}(a',h(a'))-\pd{u}{c}(a',h(a'))\cdot \frac{\pdx{g(a',h(a'))}{a}}{\pdx{g(a',h(a'))}{c}}.\label{eq:onestep}
 \end{align}
@@ -574,6 +567,6 @@ We plug equation~\eqref{eq:onestep} into equation~\eqref{eq:focsymb} to get the 
 \begin{equation*}
 \pd{u}{c}(a,h(a))+\b \cdot \pd{g}{c}(a,h(a)) \cdot \bc{\pd{ u}{a}(a',h(a'))-\pd{u}{c}(a',h(a')) \cdot \frac{\pdx{g(a',h(a'))}{a}}{\pdx{g(a',h(a'))}{c}}}=0.
 \end{equation*}
-The equation characterizes the optimal intertemporal behavior of the control variable $c$.
+The equation characterizes the optimal behavior of the control variable $c$.
 
 \end{document}

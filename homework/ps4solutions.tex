@@ -1,11 +1,11 @@
 \documentclass[letterpaper,12pt,leqno]{article}
 \usepackage{paper,math,notes}
-\available{https://www.pascalmichaillat.org/t3.html}
-\hypersetup{pdftitle={Exam on Mathematical Methods for Macroeconomics: Solutions}}
+\available{https://pascalmichaillat.org/c3/}
+\hypersetup{pdftitle={Problem Set on Mathematical Methods for Macroeconomics: Solutions}}
 
 \begin{document}
 
-\title{Exam on Mathematical Methods for Macroeconomics: Solutions}
+\title{Problem Set on Mathematical Methods for Macroeconomics: Solutions}
 \author{Pascal Michaillat}
 \date{}
 
@@ -14,26 +14,26 @@
 \end{titlepage}
 
 
-\section*{Solution to Problem 1.}
+\section*{Solution to Problem 1}
 
 \begin{enumerate}
 \item State variable: $k(t)$. Control variable: $c(t)$. Current-value Hamiltonian:
-\[H^{*}(t)=\frac{c(t)^{1-\s}-1}{1-\s} +q(t)\cdot \left[k(t)^{\a}-c(t)-\d \cdot k(t)\right],\]
+\[\Hc^{*}(t)=\frac{c(t)^{1-\s}-1}{1-\s} +q(t)\cdot \left[k(t)^{\a}-c(t)-\d \cdot k(t)\right],\]
 where $q(t)$ is the co-state variable. We have the following optimality conditions:
 
 \begin{itemize}
 
 \item First optimality condition:
 \begin{align*}
-\frac{\partial H^{*}(t)}{\partial c(t)}&=0\\
+\pd{\Hc^{*}(t)}{c(t)}&=0\\
 c(t)^{-\s}&=q(t).
 \end{align*}
 
 \item Second optimality condition:
 \begin{align*}
-\frac{\partial H^{*}(t)}{\partial k(t)}&=\rho\cdot q(t)-\dot{q}(t)\\
+\pd{\Hc^{*}(t)}{k(t)}&=\rho\cdot q(t)-\dot{q}(t)\\
 q(t)\cdot \left[\a\cdot k(t)^{\a-1}-\d -\rho\right]&=-\dot{q}(t)\\
-\left[\a\cdot k(t)^{\a-1}-\d -\rho\right]&=-\frac{\dot{q}(t)}{q(t)}\\
+\bs{\a\cdot k(t)^{\a-1}-\d -\rho}&=-\frac{\dot{q}(t)}{q(t)}.\\
 \end{align*}
 
 \item Third optimality condition: the transversality condition
@@ -45,7 +45,7 @@ q(t)\cdot \left[\a\cdot k(t)^{\a-1}-\d -\rho\right]&=-\dot{q}(t)\\
 
 \item Take the log of the first optimality condition, differentiate with respect to time $t$, and plug the result from the second optimality condition:
 \begin{align*}
--\s\cdot \ln [c(t)]&=\ln[q(t)]\\
+-\s\cdot \ln{c(t)}&=\ln{q(t)}\\
 \s\cdot \frac{\dot{c}(t)}{c(t)}&=-\frac{\dot{q}(t)}{q(t)}\\
 \frac{\dot{c}(t)}{c(t)}&=\frac{1}{\s}\cdot \left[\a\cdot k(t)^{\a-1}-\d -\rho\right].
 \end{align*}
@@ -114,14 +114,14 @@ Therefore, the steady state of the system is a saddle point. The saddle path goe
 \end{enumerate}
 
 
-\section*{Solution to Problem 2.} 
+\section*{Solution to Problem 2} 
 
 \begin{enumerate}
 \item The Lagrangian associated with the problem is
 \begin{align*}
-L=\sum_{t=0}^{+\infty}\b^t \cdot\{\ln(c_t)-\l_{t}\cdot [k_{t+1}-(1+r)\cdot k_{t}+c_{t}]\},
+\Lc=\sum_{t=0}^{+\infty}\b^t \bc{\ln(c_t)-\l_{t}\cdot [k_{t+1}-(1+r)\cdot k_{t}+c_{t}]},
 \end{align*}
-where  $\{\l_t\}_{t=1}^{+\infty}$ is the sequences of Lagrange multipliers associated with the sequences of constraints.
+where  $\bc{\l_t}_{t=1}^{+\infty}$ is the sequences of Lagrange multipliers associated with the sequences of constraints.
 
 \item The first-order conditions with respect to $c_{t}$ and $k_{t+1}$ are
 \begin{align*}
