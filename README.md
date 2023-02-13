@@ -22,8 +22,8 @@ The course covers basic mathematical methods to study dynamical systems, in disc
 
 The repository contains all the material for the course, organized in two folders:
 
-+ `notes` folder – 3 sets of lecture notes
-+ `homework` folder – 4 problem sets and their solutions
++ `lecturenotes` folder – 3 sets of lecture notes
++ `problemsets` folder – 4 problem sets and their solutions
 
 The material is available as both LaTeX files and PDF files. The PDF files are produced by compiling the LaTeX files using pdfTeX and the MacTeX-2021 distribution.
 
@@ -37,7 +37,7 @@ The folders contain the following LaTeX style files:
 
 ## Lecture notes
 
-The `notes` folder contains the following material:
+The `lecturenotes` folder contains the following material:
 
 + `notes1.pdf` – lecture notes on dynamic programming
 + `notes1.tex` – LaTeX file producing  `notes1.pdf`
@@ -48,9 +48,9 @@ The `notes` folder contains the following material:
 + `phasediagrams.pdf` – phase diagrams included in `notes3.tex`
 + `phasediagrams.key` – Keynote file producing `phasediagrams.pdf`
 
-## Homework
+## Problem sets
 
-The `homework` folder contains the following material:
+The `problemsets` folder contains the following material:
 
 + `ps1.pdf` – problem set on dynamic programming
 + `ps1.tex` – LaTeX file producing `ps1.pdf`
