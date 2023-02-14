@@ -23,11 +23,11 @@ The course covers basic mathematical methods to study dynamical systems, in disc
 The repository contains all the material for the course, organized in two folders:
 
 + `lecturenotes` folder – 3 sets of lecture notes
-+ `problemsets` folder – 4 problem sets and their solutions
++ `problemsets` folder – 4 problem sets
 
 The material is available as both LaTeX files and PDF files. The PDF files are produced by compiling the LaTeX files using pdfTeX and the MacTeX-2021 distribution.
 
-## LaTeX style files
+### LaTeX style files
 
 The folders contain the following LaTeX style files:
 
@@ -35,7 +35,7 @@ The folders contain the following LaTeX style files:
 + `notes.sty` – slight modification of `paper.sty` for lecture notes
 + `math.sty` – [commands to typeset math](https://github.com/pmichaillat/latex-math)
 
-## Lecture notes
+### Lecture notes
 
 The `lecturenotes` folder contains the following material:
 
@@ -48,26 +48,20 @@ The `lecturenotes` folder contains the following material:
 + `phasediagrams.pdf` – phase diagrams included in `notes3.tex`
 + `phasediagrams.key` – Keynote file producing `phasediagrams.pdf`
 
-## Problem sets
+### Problem sets
 
 The `problemsets` folder contains the following material:
 
 + `ps1.pdf` – problem set on dynamic programming
 + `ps1.tex` – LaTeX file producing `ps1.pdf`
-+ `ps1solutions.pdf` – solutions to the problem set on dynamic programming
-+ `ps1solutions.tex` – LaTeX file producing `ps1solutions.pdf`
 + `ps2.pdf` – problem set on optimal control
 + `ps2.tex` – LaTeX file producing `ps2.pdf`
-+ `ps2solutions.pdf` – solutions to the problem set on optimal control
-+ `ps2solutions.tex` – LaTeX file producing `ps2solutions.pdf`
 + `ps3.pdf` – problem set on differential equations
 + `ps3.tex` – LaTeX file producing `ps3.pdf`
-+ `ps3solutions.pdf` – solutions to the problem set on differential equations
-+ `ps3solutions.tex` – LaTeX file producing `ps3solutions.pdf`
 + `ps4.pdf` – cumulative problem set covering all three topics (this problem set can also be used as a one-hour cumulative exam)
 + `ps4.tex` – LaTeX file producing `ps4.pdf`
-+ `ps4solutions.pdf` – solutions to the cumulative problem set
-+ `ps4solutions.tex` – LaTeX file producing `ps4solutions.pdf`
+
+Solutions to the problems sets are available to instructors [upon request](https://github.com/pmichaillat/math-for-macro/discussions).
 
 ## License
 
