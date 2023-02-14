@@ -47,7 +47,7 @@ The `lecturenotes` folder contains the LaTeX source files for the lecture notes:
 + `notes3.tex` – lecture notes on differential equations
 + `notes3.pdf` – PDF file produced by  `notes3.tex`
 + `phasediagrams.key` – phase diagrams included in `notes3.tex`
-+ `phasediagrams.pdf` – PDF file producing `phasediagrams.pdf`
++ `phasediagrams.pdf` – PDF file produced by `phasediagrams.pdf`
 
 ### Problem sets
 
