@@ -20,12 +20,13 @@ The course covers basic mathematical methods to study dynamical systems, in disc
 
 ## Course material
 
-The repository contains all the material for the course, organized in two folders:
+The repository contains the LaTeX source files for all the course material. The repository also contains the PDF files produced by compiling the LaTeX files with pdfTeX and the MacTeX-2021 distribution.
+
+The files are organized in two folders:
 
 + `lecturenotes` folder – 3 sets of lecture notes
 + `problemsets` folder – 4 problem sets
 
-The material is available as both LaTeX files and PDF files. The PDF files are produced by compiling the LaTeX files using pdfTeX and the MacTeX-2021 distribution.
 
 ### LaTeX style files
 
@@ -37,29 +38,29 @@ The folders contain the following LaTeX style files:
 
 ### Lecture notes
 
-The `lecturenotes` folder contains the following material:
+The `lecturenotes` folder contains the LaTeX source files for the lecture notes:
 
-+ `notes1.pdf` – lecture notes on dynamic programming
-+ `notes1.tex` – LaTeX file producing  `notes1.pdf`
-+ `notes2.pdf` – lecture notes on optimal control
-+ `notes2.tex` – LaTeX file producing  `notes2.pdf`
-+ `notes3.pdf` – lecture notes on differential equations
-+ `notes3.tex` – LaTeX file producing  `notes3.pdf`
-+ `phasediagrams.pdf` – phase diagrams included in `notes3.tex`
-+ `phasediagrams.key` – Keynote file producing `phasediagrams.pdf`
++ `notes1.tex` – lecture notes on dynamic programming
++ `notes1.pdf` – PDF file produced by  `notes1.tex`
++ `notes2.tex` – lecture notes on optimal control
++ `notes2.pdf` – PDF file produced by  `notes2.tex`
++ `notes3.tex` – lecture notes on differential equations
++ `notes3.pdf` – PDF file produced by  `notes3.tex`
++ `phasediagrams.key` – phase diagrams included in `notes3.tex`
++ `phasediagrams.pdf` – PDF file producing `phasediagrams.pdf`
 
 ### Problem sets
 
-The `problemsets` folder contains the following material:
+The `problemsets` folder contains the LaTeX source files for the problem sets:
 
-+ `ps1.pdf` – problem set on dynamic programming
-+ `ps1.tex` – LaTeX file producing `ps1.pdf`
-+ `ps2.pdf` – problem set on optimal control
-+ `ps2.tex` – LaTeX file producing `ps2.pdf`
-+ `ps3.pdf` – problem set on differential equations
-+ `ps3.tex` – LaTeX file producing `ps3.pdf`
-+ `ps4.pdf` – cumulative problem set covering all three topics (this problem set can also be used as a one-hour cumulative exam)
-+ `ps4.tex` – LaTeX file producing `ps4.pdf`
++ `ps1.tex` – problem set on dynamic programming
++ `ps1.pdf` – PDF file produced by `ps1.tex`
++ `ps2.tex` – problem set on optimal control
++ `ps2.pdf` – PDF file produced by `ps2.tex`
++ `ps3.tex` – problem set on differential equations
++ `ps3.pdf` – PDF file produced by `ps3.tex`
++ `ps4.tex` – cumulative problem set covering all three topics (this problem set can also be used as a one-hour cumulative exam)
++ `ps4.pdf` – PDF file produced by `ps4.tex`
 
 Solutions to the problems sets are available to instructors [upon request](https://github.com/pmichaillat/math-for-macro/discussions).
 
