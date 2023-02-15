@@ -20,7 +20,7 @@ The course covers basic mathematical methods to study dynamical systems, in disc
 
 ## Course material
 
-The repository contains the LaTeX source files for all the course material. The repository also contains the PDF files produced by compiling the LaTeX files with pdfTeX and the MacTeX-2021 distribution.
+The repository contains the LaTeX source files for the course material. The repository also contains the PDF files produced by compiling the LaTeX files with pdfTeX and the MacTeX-2021 distribution.
 
 The files are organized in two folders:
 
