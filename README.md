@@ -27,7 +27,6 @@ The files are organized in two folders:
 + `lecturenotes` folder – 3 sets of lecture notes
 + `problemsets` folder – 4 problem sets
 
-
 ### LaTeX style files
 
 The folders contain the following LaTeX style files:
@@ -40,27 +39,19 @@ The folders contain the following LaTeX style files:
 
 The `lecturenotes` folder contains the LaTeX source files for the lecture notes:
 
-+ `notes1.tex` – Lecture notes on dynamic programming
-+ `notes1.pdf` – PDF file produced by  `notes1.tex`
-+ `notes2.tex` – Lecture notes on optimal control
-+ `notes2.pdf` – PDF file produced by  `notes2.tex`
-+ `notes3.tex` – Lecture notes on differential equations
-+ `notes3.pdf` – PDF file produced by  `notes3.tex`
-+ `phasediagrams.key` – Phase diagrams included in `notes3.tex`
-+ `phasediagrams.pdf` – PDF file produced by `phasediagrams.pdf`
++ `notes1.tex`, `notes1.pdf` – Lecture notes on dynamic programming
++ `notes2.tex`, `notes2.pdf` – Lecture notes on optimal control
++ `notes3.tex`, `notes3.pdf` – Lecture notes on differential equations
++ `phasediagrams.key`, `phasediagrams.pdf` – Phase diagrams included in `notes3.tex`
 
 ### Problem sets
 
 The `problemsets` folder contains the LaTeX source files for the problem sets:
 
-+ `ps1.tex` – Problem set on dynamic programming
-+ `ps1.pdf` – PDF file produced by `ps1.tex`
-+ `ps2.tex` – Problem set on optimal control
-+ `ps2.pdf` – PDF file produced by `ps2.tex`
-+ `ps3.tex` – Problem set on differential equations
-+ `ps3.pdf` – PDF file produced by `ps3.tex`
-+ `ps4.tex` – Cumulative problem set covering all three topics (this problem set can also be used as a one-hour cumulative exam)
-+ `ps4.pdf` – PDF file produced by `ps4.tex`
++ `ps1.tex`, `ps1.pdf` – Problem set on dynamic programming
++ `ps2.tex`, `ps2.pdf` – Problem set on optimal control
++ `ps3.tex`, `ps3.pdf` – Problem set on differential equations
++ `ps4.tex`, `ps4.pdf` – Cumulative problem set covering all three topics
 
 Solutions to the problems sets are available to instructors [upon request](https://github.com/pmichaillat/math-for-macro/discussions).
 
