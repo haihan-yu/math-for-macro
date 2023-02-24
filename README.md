@@ -14,18 +14,18 @@ The course covers basic mathematical methods to study dynamical systems, in disc
 2. Optimal control – To solve continuous-time optimization problems
 3. Differential equations – To characterize continuous-time systems
 
-## Course material
+## Teaching material
 
-The repository contains the LaTeX source files for the course material. The repository also contains the PDF files produced by compiling the LaTeX files with pdfTeX and the MacTeX-2021 distribution.
+The repository contains the LaTeX source files to the course material. The repository also contains the PDF files produced by compiling the LaTeX files with pdfTeX and the MacTeX-2021 distribution.
 
-The files are organized in two folders:
+The material is organized in two folders:
 
 + `lecturenotes` folder – 3 sets of lecture notes
 + `problemsets` folder – 4 problem sets
 
-### LaTeX style files
+### Style files
 
-The folders contain the following LaTeX style files:
+The folders contain LaTeX style files, which are used to format the lecture notes and problem sets:
 
 + `paper.sty` – [Commands to format academic papers](https://github.com/pmichaillat/latex-paper) 
 + `notes.sty` – Slight modification of `paper.sty` for lecture notes
@@ -33,7 +33,7 @@ The folders contain the following LaTeX style files:
 
 ### Lecture notes
 
-The `lecturenotes` folder contains the LaTeX source files for the lecture notes:
+The `lecturenotes` folder contains the LaTeX source files to the lecture notes:
 
 + `notes1.tex`, `notes1.pdf` – Lecture notes on dynamic programming
 + `notes2.tex`, `notes2.pdf` – Lecture notes on optimal control
@@ -42,7 +42,7 @@ The `lecturenotes` folder contains the LaTeX source files for the lecture notes:
 
 ### Problem sets
 
-The `problemsets` folder contains the LaTeX source files for the problem sets:
+The `problemsets` folder contains the LaTeX source files to the problem sets:
 
 + `ps1.tex`, `ps1.pdf` – Problem set on dynamic programming
 + `ps2.tex`, `ps2.pdf` – Problem set on optimal control
