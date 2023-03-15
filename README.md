@@ -23,13 +23,6 @@ The material is organized in two folders:
 + `lecturenotes` folder – 3 sets of lecture notes
 + `problemsets` folder – 4 problem sets
 
-### Style files
-
-The folders contain LaTeX style files, which are used to format the lecture notes and problem sets:
-
-+ `paper.sty` – [Commands to format academic papers](https://github.com/pmichaillat/latex-paper) 
-+ `notes.sty` – Slight modification of `paper.sty` for lecture notes
-+ `math.sty` – [Commands to typeset math](https://github.com/pmichaillat/latex-math)
 
 ### Lecture notes
 
@@ -50,6 +43,14 @@ The `problemsets` folder contains the LaTeX source files to the problem sets:
 + `ps4.tex`, `ps4.pdf` – Cumulative problem set covering all three topics
 
 Solutions to the problems sets are available to instructors [upon request](https://github.com/pmichaillat/math-for-macro/discussions).
+
+### Style files
+
+The folders also contain LaTeX style files, which are used to format the lecture notes and problem sets:
+
++ `paper.sty` – [Commands to format academic papers](https://github.com/pmichaillat/latex-paper) 
++ `notes.sty` – Slight modification of `paper.sty` for lecture notes
++ `math.sty` – [Commands to typeset math](https://github.com/pmichaillat/latex-math)
 
 ## License
 
