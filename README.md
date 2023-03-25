@@ -1,6 +1,6 @@
-# Mathematical Methods for Macroeconomics
+# Mathematical Methods for Macroeconomics: Source Files
 
-This repository contains teaching material for a week-long graduate course on mathematical methods for macroeconomics. The material was developed by [Pascal Michaillat](https://pascalmichaillat.org/) for EC400 at the [London School of Economics & Political Science](https://www.lse.ac.uk).
+This repository contains the source files producing all the teaching material for a week-long graduate course on mathematical methods for macroeconomics. This teaching material was developed by [Pascal Michaillat](https://pascalmichaillat.org/) for EC400 at the [London School of Economics & Political Science](https://www.lse.ac.uk).
 
 ## Course webpage
 
@@ -14,15 +14,14 @@ The course covers basic mathematical methods to study dynamical systems, in disc
 2. Optimal control – To solve continuous-time optimization problems
 3. Differential equations – To characterize continuous-time systems
 
-## Teaching material
+## Source files
 
-The repository contains the LaTeX source files to the course material. The repository also contains the PDF files produced by compiling the LaTeX files with pdfTeX.
-
-The material is organized in two folders:
+The source files are in LaTeX format. They are organized in 2 folders:
 
 + `lecturenotes` folder – 3 sets of lecture notes
 + `problemsets` folder – 4 problem sets
 
+The folders also contain the PDF files produced by compiling the LaTeX files with pdfTeX.
 
 ### Lecture notes
 
@@ -46,7 +45,7 @@ Solutions to the problems sets are available to instructors [upon request](https
 
 ### Style files
 
-The folders also contain LaTeX style files, which are used to format the lecture notes and problem sets:
+The folders also contain the LaTeX style files that are used to format the lecture notes and problem sets:
 
 + `paper.sty` – [Commands to format academic papers](https://github.com/pmichaillat/latex-paper) 
 + `notes.sty` – Slight modification of `paper.sty` for lecture notes
