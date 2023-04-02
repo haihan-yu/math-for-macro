@@ -1,6 +1,6 @@
 # Mathematical Methods for Macroeconomics: Source Files
 
-This repository contains source files producing teaching material for a week-long graduate course in mathematical methods for macroeconomics. The teaching material was developed by [Pascal Michaillat](https://pascalmichaillat.org/) for EC400 at the [London School of Economics & Political Science](https://www.lse.ac.uk).
+This repository contains source files producing the teaching material for a week-long graduate course in mathematical methods for macroeconomics. The teaching material was developed by [Pascal Michaillat](https://pascalmichaillat.org/) for EC400 at the [London School of Economics & Political Science](https://www.lse.ac.uk).
 
 ## Course webpage
 
