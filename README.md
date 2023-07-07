@@ -41,7 +41,7 @@ The `problemsets` folder contains the LaTeX source files to the problem sets:
 + `ps3.tex`, `ps3.pdf` – Problem set on differential equations
 + `ps4.tex`, `ps4.pdf` – Cumulative problem set covering all three topics
 
-Solutions to the problems sets are available to instructors [upon request](https://github.com/pmichaillat/math-for-macro/discussions).
+Solutions to the problems sets are available to instructors [upon request](mailto:pascal.michaillat@gmail.com).
 
 ### Style files
 
