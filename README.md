@@ -1,6 +1,6 @@
 # Mathematics for Macroeconomics: Source Files
 
-This repository contains source files producing the course material for "Mathematics for Macroeconomics," a week-long graduate course developed by [Pascal Michaillat](https://pascalmichaillat.org/) and taught at the [London School of Economics & Political Science](https://www.lse.ac.uk).
+This repository contains the source files of the course "Mathematics for Macroeconomics" developed by [Pascal Michaillat](https://pascalmichaillat.org/) and taught at the [London School of Economics & Political Science](https://www.lse.ac.uk).
 
 ## Course webpage
 
@@ -8,7 +8,7 @@ The course material is hosted at https://pascalmichaillat.org/c3/.
 
 ## Course overview
 
-The course covers basic mathematical methods to study dynamical systems, in discrete time and in continuous time. The course covers three methods:
+The course is designed for graduate students. It explores basic mathematical methods to study dynamical systems, in discrete time and in continuous time. Such systems are prevalent in macroeconomics. The course introduces three methods, which can be covered in about a week:
 
 1. Dynamic programming – To solve discrete-time optimization problems
 2. Optimal control – To solve continuous-time optimization problems
@@ -48,8 +48,8 @@ Solutions to the problems sets are available to instructors [upon request](mailt
 The folders also contain the LaTeX style files that are used to format the lecture notes and problem sets:
 
 + `paper.sty` – [Commands to format academic papers](https://github.com/pmichaillat/latex-paper) 
-+ `notes.sty` – Slight modification of `paper.sty` for lecture notes
-+ `math.sty` – [Commands to typeset math](https://github.com/pmichaillat/latex-math)
++ `notes.sty` – Slight modification of `paper.sty` for teaching material
++ `math.sty` – [Commands to write math](https://github.com/pmichaillat/latex-math)
 
 ## License
 
